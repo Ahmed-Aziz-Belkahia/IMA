@@ -1,0 +1,60 @@
+// breakpoint
+@mixin screen-360() {
+    @media (max-width: 360px) {
+        @content;
+    }
+}
+
+@mixin portrait-phone() {
+    @media (max-width: 575.98px) {
+        @content;
+    }
+}
+
+@mixin landscape-phone() {
+    @media (min-width: 576px) and (max-width: 767.98px) {
+        @content;
+    }
+}
+
+@mixin all-phone() {
+    @media (max-width: 767.98px) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        @content;
+    }
+}
+
+@mixin desktop() {
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        @content;
+    }
+}
+
+@mixin screen-1200() {
+    @media (min-width: 1200px) and (max-width: 1399.98px) {
+        @content;
+    }
+}
+
+@mixin screen-1400() {
+    @media (min-width: 1400px) and (max-width: 1919.98px) {
+        @content;
+    }
+}
+
+@mixin screen-1920-plus () {
+    @media (min-width: 1920px) {
+        @content;
+    }
+}
+
+@mixin all-desktop() {
+    @media (min-width: 992px) {
+        @content;
+    }
+}

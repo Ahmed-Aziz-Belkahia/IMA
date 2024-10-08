@@ -1,0 +1,53 @@
+/* breadcrumb */
+.breadcrumb-section {
+    background-color: $secondary-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 120px 0;
+    text-align: center;
+    @include tablet {
+        padding: 100px 0;
+    }
+    @include all-phone {
+        padding: 80px 0;
+    }
+    ul {
+        margin-top: 20px;
+        li {
+            display: inline-block;
+            margin: 0 5px;
+            text-transform: capitalize;
+            @include tablet {
+                margin: 0 3px;
+            }
+            @include all-phone {
+                margin: 0 3px;
+            }
+            a {
+                color: $white-color;
+                padding: 7px 12px;
+                border: 1px solid $border-color;
+                border-radius: 30px;
+                transition: $transition;
+                &:hover {
+                    color: $secondary-color;
+                    background-color: $primary-color;
+                    border: 1px solid transparent;
+                }
+            }
+            span {
+                font-size: 20px;
+                position: relative;
+                top: 3px;
+            }
+            &.active {
+                color: $primary-color;
+                background-color: rgba($primary-color, .1);
+                padding: 6px 12px;
+                border: 1px solid $primary-color;
+                border-radius: 30px;
+            }
+        }
+    }
+}

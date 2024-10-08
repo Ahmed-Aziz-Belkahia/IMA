@@ -1,0 +1,174 @@
+/* tab & accordion */
+.service-area {
+    .accordion-list {    
+        li {
+            background-color: transparent;
+            border: 1px solid $border-color;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            &.active {
+                border: 1px solid $primary-color;
+                h3 {
+                    color: $primary-color;
+                    padding-top: 50px;
+                    padding-bottom: 30px;
+                    margin-bottom: -100px;
+                    @include desktop {
+                        padding-bottom: 50px;
+                    }
+                    @include tablet {
+                        margin-bottom: 0;
+                        padding-top: 20px;
+                        padding-bottom: 0;
+                    }
+                    @include all-phone {
+                        margin-bottom: 0;
+                        padding-top: 20px;
+                        padding-bottom: 0;
+                    }
+                }
+            }        
+            
+            h3 {
+                cursor: pointer;
+                padding: 20px 20px 20px 100px;
+                text-transform: capitalize;
+                transition: $transition;
+                span.space-right {
+                    margin-right: 20px;
+                }
+                @include tablet {
+                    padding: 20px;
+                }
+                @include all-phone {
+                    padding: 20px;
+                }
+            }
+            
+            .answer {
+                padding: 0 20px 30px 100px;
+                position: relative;
+                p:first-child {
+                    margin-top: 40px;
+                    @include tablet {
+                        margin-top: 0;
+                    }
+                    @include all-phone {
+                        margin-top: 0;
+                    }
+                }
+                @include tablet {
+                    padding: 20px;
+                }
+                @include all-phone {
+                    padding: 20px;
+                }
+                img.service-image {
+                    border-radius: 15px;
+                    width: auto;
+                    margin-left: auto;
+                    transition: $transition;
+                    @include tablet {
+                        margin-left: 0;
+                        margin-top: 35px;
+                    }
+                    @include all-phone {
+                        margin-left: 0;
+                        margin-top: 35px;
+                    }
+                    @include portrait-phone {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.faq-area {        
+    .tab-menu {
+        margin-bottom: 30px;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        padding: 10px 0 0;
+        width: fit-content;
+    
+        .tab-menu-item {
+            cursor: pointer;
+            transition: $transition;
+            border: 1px solid $border-color;
+            border-radius: 5px;
+            margin: 0 9px;
+            padding: 7px 10px;
+            display: inline-block;
+            margin-bottom: 10px;
+            
+            &.active, &:hover {
+                background-color: $primary-color;
+                color: $black-color;
+            }
+        }
+    }
+    
+    .tab-content {
+        width: 100%;
+        .tab-content-item {
+            display: none;
+    
+            &.active {
+                display: block;
+            }
+        }
+    }
+    
+    .accordion {
+        .accordion-item {
+            background-color: $secondary-color;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+    
+            .accordion-header {
+                padding: 15px 30px;
+                cursor: pointer;
+                background-color: $secondary-color;
+                position: relative;
+                font-size: 24px;
+                font-weight: 700;
+                color: $heading-color;
+                @include portrait-phone {
+                    font-size: 18px;
+                }
+                
+                &:after {
+                    content: '+';
+                    position: absolute;
+                    right: 20px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 30px;
+                    color: $heading-color;
+                }
+    
+                &.active:after {
+                    content: '×';
+                    color: $primary-color;
+                }
+                &.active {
+                    color: $primary-color;
+                }
+            }
+    
+            .accordion-content {
+                display: none;
+                padding: 0 30px 15px;
+                background-color: $secondary-color;
+                color: $heading-color;
+    
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+/*-------------------------------------------------------------
+theme name: Procus - Creative Agency HTML Template
+theme uri: https://themes.techlynstudio.com/html/procus
+author: Techlyn
+author uri: https://techlynstudio.com/
+version: 1.0.0
+text domain: procus
+-------------------------------------------------------------*/
+
+/*------------------------------------------------------------- 
+TABLE OF CONTENTS: 
+---------------------------------------------------------------
+>> author css
+>> navbar
+>> header
+>> footer
+>> breadcrumb
+>> tab & accordion
+>> animation
+>> back to top
+>> button 
+>> form
+>> preloader
+>> spacing
+>> theme
+>> home-02
+>> home-03
+>> light-version
+--------------------------------------------------------------*/
+
+// setting
+@import 'settings/variable';
+@import 'settings/mixin';
+
+// base
+@import 'base/base';
+
+// layout
+@import 'layout/navbar';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/breadcrumb';
+
+// module
+@import 'module/accordion';
+@import 'module/animation';
+@import 'module/back-to-top';
+@import 'module/button';
+@import 'module/form';
+@import 'module/preloader';
+@import 'module/spacing';
+@import 'module/color-switch';
+
+// theme 
+@import 'theme/theme';
+@import 'theme/home-2';
+@import 'theme/home-3';
+
+// dark theme
+@import 'settings/light-theme';

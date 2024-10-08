@@ -1,0 +1,727 @@
+/* home-03 */
+.hero-home-3 {
+    position: relative;
+    padding: 150px 0;
+    .hero-bg-3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        z-index: -1;
+        &.dark-version {
+            display: block;
+        }
+        &.light-version {
+            display: none;
+        }
+    }
+    @include tablet {
+        padding: 100px 0;
+    }
+    @include all-phone {
+        padding: 100px 0;
+    }
+    .dark-version {
+        display: block;
+    }
+    .light-version {
+        display: none;
+    }
+    .vector-image {
+        width: auto;
+        position: absolute;
+        &.vector-1 {
+            top: 9%;
+            left: 11%;
+            @include screen-1400 {
+                top: 5%;
+            }
+            @include screen-1200 {
+                top: 5%;
+            }
+            @include desktop {
+                top: 5%;
+            }
+            @include tablet {
+                display: none;
+            }
+            @include all-phone {
+                display: none;
+            }
+        }
+        &.vector-2 {
+            top: 20%;
+            right: 7%;
+            @include screen-1400 {
+                top: 5%;
+            }
+            @include screen-1200 {
+                top: 5%;
+            }
+            @include desktop {
+                top: 5%;
+            }
+            @include tablet {
+                display: none;
+            }
+            @include all-phone {
+                display: none;
+            }
+        }
+        &.vector-3 {
+            bottom: 22%;
+            left: 5%;
+            opacity: .1;
+            @include screen-1400 {
+                bottom: 4%;
+            }
+            @include screen-1200 {
+                bottom: 4%;
+            }
+            @include desktop {
+                bottom: 4%;
+            }
+            @include tablet {
+                display: none;
+            }
+            @include all-phone {
+                display: none;
+            }
+        }
+    }
+    .button-group {
+        position: relative;
+        .vector-4 {
+            width: auto;
+            position: absolute;
+            top: 10px;
+            left: 200px;
+        }
+    }
+    h1 {
+        span {
+            color: $primary-color;
+        }
+    }
+    .hero-image-right {
+        @include tablet {
+            margin-top: 50px;
+        }
+        @include all-phone {
+            margin-top: 40px;
+        }
+    }
+
+    .hero-button-box {
+        position: relative;
+        width: 100%;
+        height: 680px;
+        border: 1px solid $primary-color;
+        background-color: $black-color;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        @include tablet {
+            margin-top: 50px;
+        }
+        @include all-phone {
+            margin-top: 50px;
+        }
+        .text-item {
+            position: absolute;
+            cursor: pointer;
+            span {
+                color: $black-color;
+                font-size: 30px;
+                display: inline-block;
+                border: 1px solid transparent;
+                width: 50px;
+                height: 50px;
+                background-color: $white-color;
+                border-radius: 50%;
+                line-height: 1.7em;
+                text-align: center;
+                transition: .2s;
+                cursor: pointer;
+                &:hover {
+                    color: $white-color;
+                    border: 1px solid $white-color;
+                    background-color: transparent;
+                }
+            }
+        }
+        /* Positioning each text item */
+        .item1 { top: 45%; left: 10%; transform: rotate(-25deg); 
+            @include portrait-phone {
+                top: 40%;
+            }}
+        .item2 { top: 15%; right: 15%; transform: rotate(15deg); 
+        @include portrait-phone {
+            top: 8%; right: 10%;
+        }}
+        .item3 { bottom: 10%; left: 25%; }
+        .item4 { top: 20%; left: 20%; transform: rotate(-25deg); 
+            @include portrait-phone {
+                left: 10%;
+            }}
+        .item5 { top: 55%; right: 32%; transform: rotate(-20deg); }
+        .item6 { top: 40%; right: 10%; transform: rotate(25deg); 
+            @include portrait-phone {
+                top: 30%;;
+            }}
+        .item7 { top: 60%; right: 10%; transform: rotate(70deg); 
+            @include portrait-phone {
+                top: 55%; right: 0%;
+            }}
+        .item8 { top: 80%; right: 10%; transform: rotate(25deg); 
+            @include portrait-phone {
+                top: 70%; right: 10%;
+            }}
+        .item9 { top: 60%; left: 15%; transform: rotate(25deg); 
+            @include portrait-phone {
+                top: 70%; left: 5%;
+            }}
+        .item10 { top: 40%; left: 40%; transform: rotate(-130deg); 
+            @include portrait-phone {
+                top: 42%; left: 55%;
+            }}
+
+        .secondary-btn.white-btn {
+            color: $black-color;
+            border: 1px solid transparent;
+            background: linear-gradient(to right, transparent 50%, $white-color 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all .3s ease-out;
+        }
+        
+        .secondary-btn.white-btn:hover {
+            border: 1px solid $white-color;
+            background-position: left bottom;
+            color: $white-color;
+        }
+        
+        .secondary-btn.gray-btn {
+            color: $white-color;
+            border: 1px solid $white-color;
+            background: linear-gradient(to right, $white-color 50%, $secondary-color 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all .3s ease-out;
+        }
+        
+        .secondary-btn.gray-btn:hover {
+            border: 1px solid $white-color;
+            background-position: left bottom;
+            color: $black-color;
+        }
+        
+    }
+}
+
+/* brand home 3 */
+.brand-home-3 {
+    background-color: $black-color;
+    border-top: 1px solid $primary-color;
+    border-bottom: 1px solid $primary-color;
+    padding: 80px 0;
+    position: relative;
+    z-index: 1;
+    .dark-version {
+        display: block;
+    }
+    .light-version {
+        display: none;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: -.5%;
+        left: 0;
+        width: 400px;
+        height: 101%;
+        background-image: linear-gradient(to right, $black-color, transparent);
+        z-index: 2;
+        @include all-phone {
+            display: none;
+        }
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: -.5%;
+        right: 0;
+        width: 400px;
+        height: 101%;
+        background-image: linear-gradient(to left, $black-color, transparent);
+        @include all-phone {
+            display: none;
+        }
+    }
+    .brand-logo {
+        max-width: 230px;
+        img {
+            width: auto;
+            margin: auto;
+        }
+    }
+    .slick-slide {
+        margin: 0 15px;
+    }
+}
+
+/* counter home 3 */
+.counter-home-3 {
+    background-color: $black-color;
+    .title-image {
+        img {
+            width: auto;
+            @include desktop {
+                width: 120px;
+            }
+            @include tablet {
+                width: 80px;
+            }
+            @include all-phone {
+                width: 80px;
+            }
+        }
+        @include tablet {
+            margin-bottom: 30px;
+        }
+        @include all-phone {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.section-top-3 {
+    h2 {
+        color: $white-color;
+        span {
+            color: $home-2-text-color;
+        }
+    }
+}
+
+.counter-single-3 {
+    margin-bottom: 30px;
+    width: 80%;
+    .counter-number {
+        display: flex;
+        align-items: center;
+    }
+    h2 {
+        color: $white-color;
+    }
+    h6 {
+        color: $white-color;
+    }
+    p {
+        color: $heading-color;
+    }
+}
+
+/* video home 3 */
+.video-home-3 {
+    background-color: $black-color;
+    .video-bg {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 250px 0;
+        border-radius: 20px;
+        text-align: center;
+    }
+    .video-wrapper a .video-btn {
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+        line-height: 100px;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+        background-color: rgba($primary-color, .1);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        padding-left: 4px; 
+    }
+}
+
+/* service home 3 */
+.service-home-3 {
+    background-color: $black-color;
+
+
+    .tab-menu {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .tab-menu-item {
+        &.active {
+            span {
+                color: rgba($white-color, 1);
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+        span {
+            color: rgba($white-color, .5);
+            display: block;
+            font-size: 42px;
+            font-weight: 700;
+            text-transform: capitalize;
+            padding: 24px 0 24px 40px;
+            border-bottom: 1px solid $border-color;
+            cursor: pointer;
+            transition: $transition;
+            position: relative;
+            @include all-phone {
+                font-size: 30px;
+            }
+            @include tablet {
+                font-size: 36px;
+            }
+            @include desktop {
+                font-size: 36px;
+            }
+            &:hover {
+                color: rgba($white-color, 1);
+                &::before {
+                    opacity: 1;
+                }
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 30px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../images/service-icon-home-3.png');
+                background-repeat: no-repeat;
+                opacity: .5;
+                transition: $transition;
+            }
+        }
+    }
+
+    .tab-content {
+        @include tablet {
+            margin-top: 50px;
+        }
+        @include all-phone {
+            margin-top: 50px;
+        }
+        img {
+            border-radius: 20px;
+        }
+    }
+    
+    .tab-content-item {
+        display: none;
+    }
+    
+    .tab-content-item.active {
+        display: block;
+    }
+}
+
+/* portfolio home 3 */
+.portfolio-home-3 {
+    background-color: $black-color;
+}
+
+.single-portfolio-3 {
+    margin-bottom: 60px;
+    h3 {
+        a {
+            color: $white-color;
+            transition: $transition;
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+/* testimonial home 3 */
+.testimonial-home-3 {
+    background-color: $black-color;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .section-top-3 {
+        @include tablet {
+            margin-bottom: 20px;
+        }
+        @include all-phone {
+            margin-bottom: 20px;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: -.5%;
+        left: 0;
+        width: 400px;
+        height: 101%;
+        background-image: linear-gradient(to right, $black-color, transparent);
+        z-index: 2;
+        @include all-phone {
+            display: none;
+        }
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: -.5%;
+        right: 0;
+        width: 400px;
+        height: 101%;
+        background-image: linear-gradient(to left, $black-color, transparent);
+        @include all-phone {
+            display: none;
+        }
+    }
+
+    .slick-slide {
+        margin: 0 15px;
+    }
+}
+
+.testimonial-slide-home-3 {
+    max-width: 650px;
+    position: relative;
+    padding: 40px 60px;
+    background-color: $secondary-color;
+    border-radius: 20px;
+    @include tablet {
+        width: auto;
+    }
+    @include all-phone {
+        width: auto;
+        padding: 30px;
+    }
+    .quote-text {
+        font-size: 30px;
+        font-weight: 500;
+    }
+    .testimonial-content {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @include tablet {
+            margin-top: 40px;
+        }
+        @include all-phone {
+            margin-top: 30px;
+        }
+        img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+    .testimonial-quote-icon {
+        font-size: 120px;
+        opacity: .05;
+        position: absolute;
+        bottom: -30px;
+        right: 30px;
+        @include desktop {
+            bottom: 30px;
+        }
+        @include tablet {
+            bottom: 30px;
+        }
+        @include all-phone {
+            bottom: 30px;
+        }
+    }
+}
+
+/* team home 3 */
+.team-home-3 {
+    background-color: $black-color;
+    .section-top-3 {
+        @include tablet {
+            margin-bottom: 20px;
+        }
+        @include all-phone {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.team-member-3 {
+    margin-bottom: 30px;
+    .team-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        img {
+            transition: $transition;
+        }
+        &:hover {
+            .hover-state {
+                opacity: 1;
+                visibility: visible;
+            }
+            img {
+                transform: rotate(2deg) scale(1.1);
+            }
+        }
+    }
+    .hover-state {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 200px;
+        background-image: linear-gradient(to top, rgba($primary-color, .7), transparent);
+        transition: $transition;
+        opacity: 0;
+        visibility: hidden;
+        .team-social {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            li {
+                display: inline;
+                margin-right: 15px;
+                a {
+                    color: $black-color;
+                    font-size: 24px;
+                    transition: $transition;
+                    &:hover {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+    .team-content {
+        h4 {
+            a {
+                color: $white-color;
+                transition: $transition;
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+        span {
+            text-transform: capitalize;
+            display: block;
+            margin-top: 5px;
+        }
+    }
+}
+
+/* pricing home 3 */
+.pricing-home-3 {
+    background-color: $black-color;
+}
+
+.pricing-toggle {
+    border: 1px solid $primary-color;
+    padding: 5px;
+    border-radius: 30px;
+    display: inline-block;
+    .pricing-toggle-btn {
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 30px;
+        color: $white-color;
+        font-size: 20px;
+        font-weight: 500;
+        padding: 8px 20px;
+        cursor: pointer;
+        &.active {
+            background-color: $primary-color;
+            color: $secondary-color;
+        }
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+.pricing-box {
+    background-color: $secondary-color;
+    padding: 50px 40px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    transition: $transition;
+    h3 {
+        color: $white-color;
+    }
+    p {
+        color: $white-color;
+    }
+    .price {
+        color: $white-color;
+        font-size: 60px;
+        font-weight: 700;
+        margin: 10px 0 0;
+    }
+    .pricing-features {
+        padding: 0;
+        margin-top: 20px;
+        li {
+            color: $white-color;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 5px;
+                left: 0;
+                width: 15px;
+                height: 15px;
+                background-image: url('../images/about-list-icon.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+    .secondary-btn {
+        margin-top: 30px;
+    }
+}
+
+/* blog home 3 */
+.blog-home-3 {
+    background-color: $black-color;
+}
+
+/* contact home 3 */
+.contact-home-3 {
+    background-color: $black-color;
+    .section-top-3 {
+        @include tablet {
+            margin-bottom: 20px;
+        }
+        @include all-phone {
+            margin-bottom: 20px;
+        }
+    }
+}

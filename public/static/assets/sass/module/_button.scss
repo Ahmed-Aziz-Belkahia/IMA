@@ -1,0 +1,57 @@
+/* button */
+.primary-btn {
+    color: $secondary-color;
+    border: 1px solid $primary-color;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: 500;
+    display: inline-block;
+    text-transform: capitalize;
+    padding: 8px 20px;
+    width: fit-content;
+    font-size: 18px;
+    background: linear-gradient(to right, transparent 50%, $primary-color 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease-out;
+    @include desktop {
+      padding: 8px 10px;
+    }
+    span {
+      font-size: 26px;
+      line-height: 24px;
+      position: relative;
+      top: 3px;
+      left: -5px;
+    }
+}
+
+.primary-btn:hover {
+  background-position: left bottom;
+  color: $primary-color;
+}
+
+.secondary-btn {
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: 500;
+    display: inline-block;
+    text-transform: capitalize;
+    padding: 8px 20px;
+    width: fit-content;
+    font-size: 18px;
+    background: linear-gradient(to right, $primary-color 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease-out;
+    @include desktop {
+      padding: 8px 10px;
+    }
+}
+
+.secondary-btn:hover {
+  background-position: left bottom;
+  color: $secondary-color;
+}

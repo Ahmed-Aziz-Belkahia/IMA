@@ -1,0 +1,148 @@
+/* navbar */
+nav {
+    text-align: center;
+    // home menu
+    .main-menu {
+        li {
+            display: inline-block;
+            position: relative;
+            margin-right: 0;
+            margin: 0 12px;
+            line-height: 1.7;
+            z-index: 1;
+
+            @include tablet {
+                margin: 0;
+            }
+            @include all-phone {
+                margin: 0;
+            }
+
+            &.has-submenu {
+                &::after {
+                    content: '\2b';
+                    font-family: 'FontAwesome';
+                    font-weight: 900;
+                    color: $white-color;
+                    margin-left: 2px;
+                    transition: $transition;
+
+                    @include tablet {
+                        display: none;
+                    }
+
+                    @include landscape-phone {
+                        display: none;
+                    }
+
+                    @include portrait-phone {
+                        display: none;
+                    }
+                }
+
+            }
+
+            a {
+                color: $white-color;
+                padding: 20px 0;
+                font-weight: 400;
+                display: inline-block;
+                font-size: 18px;
+                text-transform: capitalize;
+            }
+
+            @include all-desktop {
+
+                // submenu
+                .submenu {
+                    position: absolute;
+                    width: 230px;
+                    top: 120%;
+                    left: 0;
+                    background: $secondary-color;
+                    border: 1px solid $border-color;
+                    padding: 10px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: $transition;
+                    text-align: left;
+
+                    li {
+                        display: block;
+                        margin-right: initial;
+
+                        a {
+                            color: $white-color;
+                            display: block;
+                            padding: 7px;
+                            width: 100%;
+
+                            &:hover {
+                                color: $primary-color;
+                            }
+                        }
+
+                    }
+                }
+
+                &:hover {
+                    &.has-submenu {
+                        &::after {
+                            color: $primary-color;
+                        }
+                    }
+
+                    a {
+                        color: $primary-color;
+
+                        @include tablet {
+                            color: $white-color;
+                        }
+
+                    }
+
+                    .submenu {
+                        top: 115%;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+// phone menu
+.mean-container {
+    .mean-nav {
+        background: $secondary-color;
+
+        @include tablet {
+            margin-top: 80px;
+        }
+
+        @include all-phone {
+            margin-top: 80px;
+        }
+    }
+
+    .mean-bar {
+        z-index: 1;
+
+        a.meanmenu-reveal {
+            background: $primary-color;
+            top: 8px;
+            right: 20px !important;
+
+            @include tablet {
+                top: 14px;
+            }
+
+            @include all-phone {
+                top: 14px;
+            }
+        }
+    }
+
+}
