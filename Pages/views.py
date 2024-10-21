@@ -5,3 +5,7 @@ from django.shortcuts import render
 def indexView(requets, *args, **kwargs):
     
     return render(requets, 'home-2.html', {})
+
+def index2View(requets, *args, **kwargs):
+    
+    return render(requets, 'index.html', {})
