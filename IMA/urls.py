@@ -16,10 +16,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from IMA import settings
 from Pages import views
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.indexView, name="index"),
-    path("index/", views.index2View, name="index2"),
-]
+    path("about-us/", views.aboutView, name="about-us"),
+    path("contact-us/", views.contactView, name="contact-us"),
+    path("service/<slug:url_title>/", views.serviceView, name="service"),
+    path("case/<slug:url_title>/", views.caseView, name="case"),
+    path("team/<slug:url_title>/", views.teamView, name="team"),
+    path("members/", views.teamMembersView, name="members"),
+    path("post/<slug:url_title>", views.blogPostView, name="post"),
+    path("blog/", views.blogView, name="blog"),
+    path("cases/", views.casesView, name="cases"),
+    path("privacy/", views.privacyView, name="privacy"),
+    path("terms/", views.termsView, name="terms"),
+    path("services/", views.servicesView, name="services"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

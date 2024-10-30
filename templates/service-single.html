@@ -9,11 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- page title -->
-    <title>Procus - Creative Agency HTML Template</title>
+    <title>IMA - Creative Agency HTML Template</title>
 
     <!-- favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <!-- css files -->
     <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
@@ -51,8 +53,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-area">
-                            <a class="dark-version" href="index.html"> <img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
-                            <a class="light-version" href="index.html"> <img src="{% static 'assets/images/logo-black.png' %}" alt="logo"></a>
+                            <a class="IMAlogo" href="index.html"> IMA</a>
                         </div>
                     </div>
                     <div class="col-lg-8 d-none d-lg-block">
@@ -136,21 +137,19 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="service-details-image wow fadeInUp" data-wow-delay=".2s">
-                        <img src="{% static 'assets/images/service-details.png' %}" class="mb-50" alt="service-details">
+                        <img src="{{service.big_image.url}}" class="mb-50" alt="service-details">
                     </div>
                     <div class="wow fadeInUp" data-wow-delay=".2s">
-                        <h2>UI/UX Design</h2>
-                        <p class="mt-20">We specialize in creating stunning user interfaces (UI) and seamless user experiences (UX) that captivate users and drive engagement. Our team of talented designers combines creativity with functionality to deliver designs that not only look great but also provide an intuitive and delightful user experience.</p>
-                        <p class="mt-20">Our team of talented designers combines creativity with functionality to deliver designs that not only look great but also provide an intuitive and delightful user experience.</p>
+                        <h2>{{service.title}}</h2>
+                        <p class="mt-20">{{service.text}}</p>
                         <h3 class="mt-50">Our Approach</h3>
-                        <p class="mt-20">We believe that effective UI/UX design is a combination of art and science. Our approach is centered around understanding your users, your business goals, and your brand identity to create designs that resonate with your target audience and achieve your objectives.</p>
-                        <h3 class="mt-50">What We Offer in UI/UX Design</h3>
-                        <p class="mt-20">We believe that effective UI/UX design is a combination of art and science. Our approach is centered around understanding your users, your business goals, and your brand identity to create designs that resonate with your target audience and achieve your objectives.</p>
+                        <p class="mt-20">{{service.approach}}</p>
+                        <h3 class="mt-50">What We Offer in {{service.text}}</h3>
+                        <p class="mt-20">{{service.what_we_offer}}</p>
                         <ul class="service-tags">
-                            <li class="tab-link active" data-tab="tab-1"><a href="#">UI Design</a></li>
-                            <li class="tab-link" data-tab="tab-2"><a href="#">UX Design</a></li>
-                            <li class="tab-link" data-tab="tab-3"><a href="#">Interaction Design</a></li>
-                            <li class="tab-link" data-tab="tab-4"><a href="#">User Research</a></li>
+                            {% for tag in service.tags.split %}
+                                <li class="tab-link" data-tab="tab-{{ forloop.counter }}"><a href="#">{{ tag.strip }}</a></li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <div id="tab-1" class="tab-content active">
@@ -161,8 +160,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <p>Our UI design services focus on creating visually stunning interfaces that captivate users and enhance their interaction with your digital products.</p>
-                                <p class="mt-20">From color schemes to typography, we meticulously craft every detail to reflect your brand's identity and engage your audience.</p>
+                                <p>{{service.mini_image_text}}</p>
                             </div>
                         </div>
                     </div>
@@ -239,7 +237,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <h2>Our Process for UI/UX Design</h2>
-                        <p class="mt-20">We believe that effective UI/UX design is a combination of art and science. Our approach is centered around understanding your users, your business goals, and your brand identity to create designs that resonate with your target audience and achieve your objectives.</p>
+                        <p class="mt-20">{{service.process_text}}</p>
                     </div>
                 </div>
             </div>
@@ -248,60 +246,14 @@
         <div class="process-slider-part pb-120">
             <div class="container">
                 <div class="process-slider-2">
-                    <div class="single-slide">
-                        <img src="{% static 'assets/images/process-slider-shape.png' %}" class="shape-image" alt="shape-image">
-                        <span class="slide-number">1</span>
-                        <h4>Research</h4>
-                        <p class="mt-10">We conduct thorough user research to gain insights into user behaviors, needs, and pain points.</p>
-                    </div>
-                    <div class="single-slide active">
-                        <img src="{% static 'assets/images/process-slider-shape.png' %}" class="shape-image" alt="shape-image">
-                        <span class="slide-number">2</span>
-                        <h4>Wireframing</h4>
-                        <p class="mt-10">We conduct thorough user research to gain insights into user behaviors, needs, and pain points.</p>
-                    </div>
-                    <div class="single-slide">
-                        <img src="{% static 'assets/images/process-slider-shape.png' %}" class="shape-image" alt="shape-image">
-                        <span class="slide-number">3</span>
-                        <h4>scratch</h4>
-                        <p class="mt-10">We conduct thorough user research to gain insights into user behaviors, needs, and pain points.</p>
-                    </div>
-                    <div class="single-slide">
-                        <img src="{% static 'assets/images/process-slider-shape.png' %}" class="shape-image" alt="shape-image">
-                        <span class="slide-number">4</span>
-                        <h4>Design</h4>
-                        <p class="mt-10">We conduct thorough user research to gain insights into user behaviors, needs, and pain points.</p>
-                    </div>
-                    <div class="single-slide">
-                        <img src="{% static 'assets/images/process-slider-shape.png' %}" class="shape-image" alt="shape-image">
-                        <span class="slide-number">5</span>
-                        <h4>Prototype</h4>
-                        <p class="mt-10">We conduct thorough user research to gain insights into user behaviors, needs, and pain points.</p>
-                    </div>
-                    <div class="single-slide">
-                        <img src="{% static 'assets/images/process-slider-shape.png' %}" class="shape-image" alt="shape-image">
-                        <span class="slide-number">6</span>
-                        <h4>Research</h4>
-                        <p class="mt-10">We conduct thorough user research to gain insights into user behaviors, needs, and pain points.</p>
-                    </div>
-                    <div class="single-slide active">
-                        <img src="{% static 'assets/images/process-slider-shape.png' %}" class="shape-image" alt="shape-image">
-                        <span class="slide-number">7</span>
-                        <h4>Wireframing</h4>
-                        <p class="mt-10">We conduct thorough user research to gain insights into user behaviors, needs, and pain points.</p>
-                    </div>
-                    <div class="single-slide">
-                        <img src="{% static 'assets/images/process-slider-shape.png' %}" class="shape-image" alt="shape-image">
-                        <span class="slide-number">8</span>
-                        <h4>scratch</h4>
-                        <p class="mt-10">We conduct thorough user research to gain insights into user behaviors, needs, and pain points.</p>
-                    </div>
-                    <div class="single-slide">
-                        <img src="{% static 'assets/images/process-slider-shape.png' %}" class="shape-image" alt="shape-image">
-                        <span class="slide-number">9</span>
-                        <h4>Design</h4>
-                        <p class="mt-10">We conduct thorough user research to gain insights into user behaviors, needs, and pain points.</p>
-                    </div>
+                    {% for process in service.processes.all %}
+                        <div class="single-slide {% if forloop.counter == 0 %}active{% endif %}">
+                            <img src="{% static 'assets/images/process-slider-shape.png' %}" class="shape-image" alt="shape-image">
+                            <span class="slide-number">{{process.number}}1</span>
+                            <h4>{{process.title}}</h4>
+                            <p class="mt-10">{{process.text}}</p>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -424,10 +376,10 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-widget-box about-us">
                             <a href="index.html" class="footer-logo">
-                                <img src="{% static 'assets/images/logo.png' %}" alt="logo">
+                                IMA
                             </a>
                             <a href="index.html" class="footer-logo logo-black">
-                                <img src="{% static 'assets/images/logo-black.png' %}" alt="logo">
+                                IMA
                             </a>
                             <p>We're a dynamic creative agency dedicated to crafting compelling narratives and innovative solutions that resonate with precision.</p>
                             <ul class="footer-social">
@@ -468,7 +420,7 @@
                             <h4 class="footer-widget-title">Contact Us</h4>
                             <ul class="footer-contact">
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-phone"></i></span> (123) 456789000</a></li>
-                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@procus.com</span></a></li>
+                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@IMA.com</span></a></li>
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span> 1498w Fluton ste, STE 2D Chicgo, IL 63867.</a></li>
                             </ul>
                         </div>
@@ -484,7 +436,7 @@
                     <div class="row">
                         <div class="col-lg-6 align-self-center">
                             <p class="copyright-text">
-                                Copyright &copy; <span id="date"></span> <a href="index.html"> Procus</a> Designed by Pointer Flow.
+                                Copyright &copy; <span id="date"></span> <a href="index.html"> IMA</a> Designed by Pointer Flow.
                             </p>
                         </div>
                         <div class="col-lg-6 align-self-center">

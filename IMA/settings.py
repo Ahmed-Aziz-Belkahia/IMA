@@ -119,7 +119,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'public/staticfiles'
-STATICFILES_DIRS = [BASE_DIR / 'public/static',BASE_DIR / "customTheme/static"]
+STATICFILES_DIRS = [BASE_DIR / 'public/static']
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 

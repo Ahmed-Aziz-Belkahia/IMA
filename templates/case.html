@@ -11,6 +11,10 @@
     <!-- page title -->
     <title>Procus - Creative Agency HTML Template</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
     <!-- favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
 
@@ -51,8 +55,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-area">
-                            <a class="dark-version" href="index.html"> <img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
-                            <a class="light-version" href="index.html"> <img src="{% static 'assets/images/logo-black.png' %}" alt="logo"></a>
+                            <a class="IMAlogo" href="index.html">IMA</a>
                         </div>
                     </div>
                     <div class="col-lg-8 d-none d-lg-block">
@@ -143,54 +146,20 @@
             </div>
 
             <div class="row mt-60">
-                <div class="col-lg-12">
-                    <div class="single-case-item">
-                        <div class="case-image wow fadeInLeft" data-wow-delay=".2s">
-                            <img src="{% static 'assets/images/portfolio-01.png' %}" alt="case">
-                        </div>
-                        <div class="case-content wow fadeInRight" data-wow-delay=".2s">
-                            <h3><a href="case-single.html">Shopify Responsive Website Design</a></h3>
-                            <p class="mt-20">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence.</p>
-                            <a href="case-single.html" class="primary-btn mt-20">details <span><i class="ri-arrow-right-up-line"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="single-case-item item-reverse">
-                        <div class="case-content wow fadeInLeft" data-wow-delay=".2s">
-                            <h3><a href="case-single.html">Digital Agency Website Design</a></h3>
-                            <p class="mt-20">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence.</p>
-                            <a href="case-single.html" class="primary-btn mt-20">details <span><i class="ri-arrow-right-up-line"></i></span></a>
-                        </div>
-                        <div class="case-image wow fadeInRight" data-wow-delay=".2s">
-                            <img src="{% static 'assets/images/portfolio-02.png' %}" alt="case">
+                {% for case in cases %}
+                    <div class="col-lg-12">
+                        <div class="single-case-item">
+                            <div class="case-image wow fadeInLeft" data-wow-delay=".2s">
+                                <img src="{{case.big_image.url}}" alt="case">
+                            </div>
+                            <div class="case-content wow fadeInRight" data-wow-delay=".2s">
+                                <h3><a href="case-single.html">{{case.title}}</a></h3>
+                                <p class="mt-20">{{case.small_overview}}</p>
+                                <a href="{% url "case" url_title=case.url_title %}" class="primary-btn mt-20">details <span><i class="ri-arrow-right-up-line"></i></span></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="single-case-item">
-                        <div class="case-image wow fadeInLeft" data-wow-delay=".2s">
-                            <img src="{% static 'assets/images/portfolio-03.png' %}" alt="case">
-                        </div>
-                        <div class="case-content wow fadeInRight" data-wow-delay=".2s">
-                            <h3><a href="case-single.html">Shopify Responsive Website Design</a></h3>
-                            <p class="mt-20">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence.</p>
-                            <a href="case-single.html" class="primary-btn mt-20">details <span><i class="ri-arrow-right-up-line"></i></span></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="single-case-item item-reverse">
-                        <div class="case-content wow fadeInLeft" data-wow-delay=".2s">
-                            <h3><a href="case-single.html">Digital Agency Website Design</a></h3>
-                            <p class="mt-20">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence.</p>
-                            <a href="case-single.html" class="primary-btn mt-20">details <span><i class="ri-arrow-right-up-line"></i></span></a>
-                        </div>
-                        <div class="case-image wow fadeInRight" data-wow-delay=".2s">
-                            <img src="{% static 'assets/images/portfolio-04.png' %}" alt="case">
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -202,7 +171,7 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3 wow fadeInUp" data-wow-delay=".2s">
                     <div class="section-top text-center">
-                        <h2><span>Collaborations</span> with Leading Brands</h2>
+                        <h2>Collaborations with <span>Leading Brands</span></h2>
                         <p class="mt-20">Get to know the talented individuals who make our company thrive. Our diverse team brings together a wealth of expertise.</p>
                     </div>
                 </div>
@@ -212,60 +181,14 @@
             <div class="row mt-60">
                 <div class="col-lg-12">
                     <div class="brand-slider">
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/slack-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/tinder-dark.png' %}" alt="brand-logo">
+                        {% for client in clients %}
+                            <div class="brand-single">
+                                <div class="brand-logo">
+                                    <img class="dark-version" src="{{client.logo.url}}" alt="brand-logo">
+                                    <img class="light-version" src="{{client.logo.url}}" alt="brand-logo">
+                                </div>
                             </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/zoom-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/zoom-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/spotify-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/spotify-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/square-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/square-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/upwork-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/upwork-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/loom-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/loom-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/trello-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/tinder-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/docusign-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/zoom-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/stripe-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/loom-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -287,81 +210,33 @@
             <div class="row mt-60">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="testimonial-slider">
-                        <div class="testimonial-slide">
-                            <div class="testimonial-slide-bg dark-version" style="background-image: url({% static 'assets/images/testimonial-slide-bg.png)' %}"></div>
-                            <div class="testimonial-slide-bg light-version" style="background-image: url({% static 'assets/images/testimonial-slide-light-bg.png)' %}"></div>
-                            <div class="testimonial-quote text-center">
-                                <span class="testimonial-quote-icon"><i class="fa-solid fa-quote-left"></i></span>
-                                <span class="quote-text">Efficient and professional. I will definitely use their services again. The professionalism of this team made the entire process effortless and stress-free.</span>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="content-left">
-                                    <div class="author-img">
-                                        <img src="{% static 'assets/images/testimonial-01.png' %}" alt="author-image">
-                                    </div>
-                                    <div class="author-text">
-                                        <h4>Courtney Henry</h4>
-                                        <p>digital marketer</p>
-                                    </div>
+                        {% for client in clients %}
+                            <div class="testimonial-slide">
+                                <div class="testimonial-slide-bg dark-version" style="background-image: url({% static 'assets/images/testimonial-slide-bg.png)' %}"></div>
+                                <div class="testimonial-slide-bg light-version" style="background-image: url({% static 'assets/images/testimonial-slide-light-bg.png)' %}"></div>
+                                <div class="testimonial-quote text-center">
+                                    <span class="testimonial-quote-icon"><i class="fa-solid fa-quote-left"></i></span>
+                                    <span class="quote-text">{{client.testimonial}}</span>
                                 </div>
-                                <div class="content-right">
-                                    <div class="author-text">
-                                        <h4>Teriso Station</h4>
-                                        <p>creative agency</p>
+                                <div class="testimonial-content">
+                                    <div class="content-left">
+                                        <div class="author-img">
+                                            <img src="{{client.image.url}}" alt="author-image">
+                                        </div>
+                                        <div class="author-text">
+                                            <h4>{{client.name}}</h4>
+                                            <p>{{client.description}}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-slide">
-                            <div class="testimonial-slide-bg dark-version" style="background-image: url({% static 'assets/images/testimonial-slide-bg.png)' %}"></div>
-                            <div class="testimonial-slide-bg light-version" style="background-image: url({% static 'assets/images/testimonial-slide-light-bg.png)' %}"></div>
-                            <div class="testimonial-quote text-center">
-                                <span class="testimonial-quote-icon"><i class="fa-solid fa-quote-left"></i></span>
-                                <span class="quote-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, explicabo velit quod reprehenderit tempore quibusdam inventore quo excepturi.</span>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="content-left">
-                                    <div class="author-img">
-                                        <img src="{% static 'assets/images/testimonial-02.jpg' %}" alt="author-image">
-                                    </div>
-                                    <div class="author-text">
-                                        <h4>Sylvia H Green</h4>
-                                        <p>Web developer</p>
-                                    </div>
-                                </div>
-                                <div class="content-right">
-                                    <div class="author-text">
-                                        <h4>Reid E But</h4>
-                                        <p>customer</p>
+                                    <div class="content-right">
+                                        <div class="author-text">
+                                            <h4>{{client.bussiness_name}}</h4>
+                                            <p>{{client.bussiness_role}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="testimonial-slide">
-                            <div class="testimonial-slide-bg dark-version" style="background-image: url({% static 'assets/images/testimonial-slide-bg.png)' %}"></div>
-                            <div class="testimonial-slide-bg light-version" style="background-image: url({% static 'assets/images/testimonial-slide-light-bg.png)' %}"></div>
-                            <div class="testimonial-quote text-center">
-                                <span class="testimonial-quote-icon"><i class="fa-solid fa-quote-left"></i></span>
-                                <span class="quote-text">Explicabo hic quibusdam expedita eaque tempore laboriosam. Animi aliquam dolore laborum numquam earum minima eius ducimus.</span>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="content-left">
-                                    <div class="author-img">
-                                        <img src="{% static 'assets/images/testimonial-03.jpg' %}" alt="author-image">
-                                    </div>
-                                    <div class="author-text">
-                                        <h4>Reid E But</h4>
-                                        <p>digital marketer</p>
-                                    </div>
-                                </div>
-                                <div class="content-right">
-                                    <div class="author-text">
-                                        <h4>Sylvia H Green</h4>
-                                        <p>creative agency</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -389,10 +264,10 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-widget-box about-us">
                             <a href="index.html" class="footer-logo">
-                                <img src="{% static 'assets/images/logo.png' %}" alt="logo">
+                                IMA
                             </a>
                             <a href="index.html" class="footer-logo logo-black">
-                                <img src="{% static 'assets/images/logo-black.png' %}" alt="logo">
+                                IMA
                             </a>
                             <p>We're a dynamic creative agency dedicated to crafting compelling narratives and innovative solutions that resonate with precision.</p>
                             <ul class="footer-social">

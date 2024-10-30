@@ -509,6 +509,12 @@ nav .main-menu li a {
 
 .footer-area .footer-logo {
   display: block;
+  font-family: "Jaro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 50px;
 }
 
 .footer-area .logo-black {
@@ -2929,6 +2935,7 @@ nav .main-menu li a {
   height: 220px;
   border: 1px solid #ffffff;
   border-radius: 50%;
+  overflow: hidden;
 }
 
 @media (max-width: 767.98px) {
@@ -2943,9 +2950,9 @@ nav .main-menu li a {
 }
 
 .brand-area .brand-logo img {
-  width: auto;
-  margin: auto;
-  padding-top: 85px;
+  /* width: auto; */
+  /* margin: auto; */
+  /* padding-top: 85px; */
 }
 
 @media (max-width: 767.98px) {
@@ -2956,6 +2963,9 @@ nav .main-menu li a {
 
 .brand-area .slick-slide {
   margin: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -9484,4 +9494,13 @@ body.light-theme .procus-cursor2 {
     width: 720px !important;
     height: 405px !important;
   }
+}
+
+.IMAlogo {
+  font-family: "Jaro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 50px;
 }

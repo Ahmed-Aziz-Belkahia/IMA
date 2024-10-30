@@ -14,6 +14,10 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
     <!-- css files -->
     <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
@@ -51,53 +55,42 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-area">
-                            <a href="index.html">IMA {% comment %} <img src="{% static 'assets/images/logo.png' %}" alt="logo"> {% endcomment %}</a>
+                            <a href="/" class="IMAlogo">IMA {% comment %} <img src="{% static 'assets/images/logo.png' %}" alt="logo"> {% endcomment %}</a>
                         </div>
                     </div>
                     <div class="col-lg-8 d-none d-lg-block">
                         <nav id="mobile-menu">
                             <ul class="main-menu">
-                                <li class="has-submenu"><a href="index.html">home</a>
+                                <li class="has-submenu"><a href="/">home</a>
                                     <ul class="submenu">
-                                        <li><a href="index.html">home 01</a></li>
-                                        <li><a href="home-2.html">home 02</a></li>
-                                        <li><a href="home-3.html">home 03</a></li>
+                                        <li><a href="/">home 01</a></li>
+
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="services.html">services</a>
+                                <li class="has-submenu"><a href="{% url "services" %}">services</a>
                                     <ul class="submenu">
-                                        <li><a href="services.html">services</a></li>
-                                        <li><a href="service-single.html">service details</a></li>
+                                        <li><a href="{% url "services" %}">services</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="case.html">case</a>
+                                <li class="has-submenu"><a href="{% url "cases" %}">case</a>
                                     <ul class="submenu">
-                                        <li><a href="case.html">case</a></li>
-                                        <li><a href="case-single.html">case details</a></li>
+                                        <li><a href="{% url "cases" %}">case</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="blog.html">blog</a>
+                                <li class="has-submenu"><a href="{% url "blog" %}">blog</a>
                                     <ul class="submenu">
-                                        <li><a href="blog-6.html">blog full width</a></li>
-                                        <li><a href="blog.html">blog column 2</a></li>
-                                        <li><a href="blog-2.html">blog column 2</a></li>
-                                        <li><a href="blog-3.html">blog list</a></li>
-                                        <li><a href="blog-4.html">blog right sidebar</a></li>
-                                        <li><a href="blog-5.html">blog left sidebar</a></li>
-                                        <li><a href="blog-single.html">blog details</a></li>
+
+                                        <li><a href="{% url "blog" %}">blog column 2</a></li>
+
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="#">pages</a>
+                                <li class="has-submenu"><a >pages</a>
                                     <ul class="submenu">
-                                        <li><a href="about.html">about</a></li>
-                                        <li><a href="work-process.html">work process</a></li>
-                                        <li><a href="team.html">team</a></li>
-                                        <li><a href="team-single.html">team details</a></li>
-                                        <li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="error.html">404</a></li>
+                                        <li><a href="{% url "about-us" %}">about</a></li>
+                                        <li><a href="{% url "members" %}">team</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">contact</a></li>
+                                <li><a href="{% url "contact-us" %}">contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -129,16 +122,16 @@
                         <h1 class="wow fadeInDown text-ahm-f" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInDown;">Monetize Your <span>Influence</span>, <span>Grow</span>, <span>Profit</span>.</h1>
                         <p class="wow fadeInUp p-ahm" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">At IMA Agency, we help influencers scale their audience, create custom products, and turn their influence into revenue. Let’s build your brand, grow your reach, and create lasting income streams together.</p>
                         <div class="hero-btn-group-2 wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <a href="about.html" class="secondary-btn">learn more</a>
+                            <a href="{% url "about-us" %}" class="secondary-btn">learn more</a>
 
                         </div>
                         
                         <div class="wow fadeIn slik" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeIn;">
                             <ul class="hero-social-2">
-                                <li><a href="#">facebook</a></li>
-                                <li><a href="#">twitter</a></li>
-                                <li><a href="#">linkedin</a></li>
-                                <li><a href="#">instagram</a></li>
+                                <li><a >facebook</a></li>
+                                <li><a >twitter</a></li>
+                                <li><a >linkedin</a></li>
+                                <li><a >instagram</a></li>
                             </ul>
                         </div>
                     </div>
@@ -246,7 +239,7 @@
                             <li>Crafting your brand's digital story.</li>
                             <li>Innovation meets creativity.</li>
                         </ul>
-                        <a href="about.html" class="primary-btn mt-40">Read more <span><i class="ri-arrow-right-up-line"></i></span></a>
+                        <a href="{% url "about-us" %}" class="primary-btn mt-40">Read more <span><i class="ri-arrow-right-up-line"></i></span></a>
                     </div>
                 </div>
             </div>
@@ -311,7 +304,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay=".2s">
                     <div class="section-top-btn">
-                        <a href="services.html" class="primary-btn">View all <span><i class="ri-arrow-right-up-line"></i></span></a>
+                        <a href="{% url "services" %}" class="primary-btn">View all <span><i class="ri-arrow-right-up-line"></i></span></a>
                     </div>
                 </div>
             </div>
@@ -323,7 +316,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-4">
                             <div class="service-title">
-                                <h2><a href="services.html">BRANDING</a></h2>
+                                <h2><a href="{% url "services" %}">BRANDING</a></h2>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -342,7 +335,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-4">
                             <div class="service-title">
-                                <h2><a href="services.html">UI/UX DESIGN</a></h2>
+                                <h2><a href="{% url "services" %}">UI/UX DESIGN</a></h2>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -361,7 +354,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-4">
                             <div class="service-title">
-                                <h2><a href="services.html">GRAPHIC DESIGN</a></h2>
+                                <h2><a href="{% url "services" %}">GRAPHIC DESIGN</a></h2>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -380,7 +373,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-4">
                             <div class="service-title">
-                                <h2><a href="services.html">MARKETING</a></h2>
+                                <h2><a href="{% url "services" %}">MARKETING</a></h2>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -399,7 +392,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-4">
                             <div class="service-title">
-                                <h2><a href="services.html">DEVELOPMENT</a></h2>
+                                <h2><a href="{% url "services" %}">DEVELOPMENT</a></h2>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -418,7 +411,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-4">
                             <div class="service-title">
-                                <h2><a href="services.html">CONTENT</a></h2>
+                                <h2><a href="{% url "services" %}">CONTENT</a></h2>
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -456,7 +449,7 @@
                             <li>Crafting your brand's digital story.</li>
                             <li>Innovation meets creativity.</li>
                         </ul>
-                        <a href="about.html" class="primary-btn mt-40">see more <span><i class="ri-arrow-right-up-line"></i></span></a>
+                        <a href="{% url "about-us" %}" class="primary-btn mt-40">see more <span><i class="ri-arrow-right-up-line"></i></span></a>
                     </div>
                 </div>
             </div>
@@ -589,44 +582,44 @@
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
                     <div class="case-single web graphic">
                         <div class="case-image">
-                            <a href="case-single.html"><img src="{% static 'assets/images/portfolio-01.png' %}" alt="case-image"></a>
+                            <a href="{% url "case" url_title=case.url_title %}"><img src="{% static 'assets/images/portfolio-01.png' %}" alt="case-image"></a>
                         </div>
-                        <h3><a href="case-single.html">Cyber Security Landing Page</a></h3>
-                        <a href="case-single.html" class="case-category">Web Design</a>
+                        <h3><a href="{% url "case" url_title=case.url_title %}">Cyber Security Landing Page</a></h3>
+                        <a href="{% url "case" url_title=case.url_title %}" class="case-category">Web Design</a>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay=".2s">
                     <div class="case-single graphic">
                         <div class="case-image">
-                            <a href="case-single.html"><img src="{% static 'assets/images/portfolio-02.png' %}" alt="case-image"></a>
+                            <a href="{% url "case" url_title=case.url_title %}"><img src="{% static 'assets/images/portfolio-02.png' %}" alt="case-image"></a>
                         </div>
-                        <h3><a href="case-single.html">E-Commerce App Development</a></h3>
-                        <a href="case-single.html" class="case-category">App Design & Development</a>
+                        <h3><a href="{% url "case" url_title=case.url_title %}">E-Commerce App Development</a></h3>
+                        <a href="{% url "case" url_title=case.url_title %}" class="case-category">App Design & Development</a>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
                     <div class="case-single web app">
                         <div class="case-image">
-                            <a href="case-single.html"><img src="{% static 'assets/images/portfolio-02.png' %}" alt="case-image"></a>
+                            <a href="{% url "case" url_title=case.url_title %}"><img src="{% static 'assets/images/portfolio-02.png' %}" alt="case-image"></a>
                         </div>
-                        <h3><a href="case-single.html">Marketing Agency Website Design</a></h3>
-                        <a href="case-single.html" class="case-category">Web Design & Development</a>
+                        <h3><a href="{% url "case" url_title=case.url_title %}">Marketing Agency Website Design</a></h3>
+                        <a href="{% url "case" url_title=case.url_title %}" class="case-category">Web Design & Development</a>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay=".2s">
                     <div class="case-single app">
                         <div class="case-image">
-                            <a href="case-single.html"><img src="{% static 'assets/images/portfolio-02.png' %}" alt="case-image"></a>
+                            <a href="{% url "case" url_title=case.url_title %}"><img src="{% static 'assets/images/portfolio-02.png' %}" alt="case-image"></a>
                         </div>
-                        <h3><a href="case-single.html">Shopify Responsive Website Design</a></h3>
-                        <a href="case-single.html" class="case-category">Shopify</a>
+                        <h3><a href="{% url "case" url_title=case.url_title %}">Shopify Responsive Website Design</a></h3>
+                        <a href="{% url "case" url_title=case.url_title %}" class="case-category">Shopify</a>
                     </div>
                 </div>             
             </div>
             <div class="row">
                 <div class="col-12 wow fadeInUp" data-wow-delay=".2s">
                     <div class="case-button text-center mt-20">
-                        <a href="case.html" class="primary-btn">see more <span><i class="ri-arrow-right-up-line"></i></span></a>
+                        <a href="{% url "cases" %}" class="primary-btn">see more <span><i class="ri-arrow-right-up-line"></i></span></a>
                     </div>
                 </div>
             </div>
@@ -645,7 +638,7 @@
                 </div>
                 <div class="col-lg-8 wow fadeInRight" data-wow-delay=".2s">
                     <div class="section-top-btn">
-                        <a href="team.html" class="primary-btn">see all <span><i class="ri-arrow-right-up-line"></i></span></a>
+                        <a href="{% url "members" %}" class="primary-btn">see all <span><i class="ri-arrow-right-up-line"></i></span></a>
                     </div>
                 </div>
             </div>
@@ -656,19 +649,19 @@
                         <div class="team-image">
                             <div class="team-bg dark-version"style="background-image: url({% static 'assets/images/team-bg-home-2.png)' %}"></div>
                             <div class="team-bg light-version"style="background-image: url({% static 'assets/images/team-light-bg-home-2.png)' %}"></div>
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-1-home-2.png' %}" alt="team-member"></a>                           
+                            <a href="{% url "team" url_title=member.url_title %}"><img src="{% static 'assets/images/team-1-home-2.png' %}" alt="team-member"></a>                           
                         </div>
                         <div class="team-content">
                             <div class="team-bio">
-                                <h4><a href="team-single.html">Kathryn Murphy</a></h4>
+                                <h4><a href="{% url "team" url_title=member.url_title %}">Kathryn Murphy</a></h4>
                                 <span>founder & CEO</span>
                             </div>
                             <ul class="team-social">
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a ><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a ><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li><a ><i class="fa-solid fa-globe"></i></a></li>
+                                <li><a ><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a ><i class="fa-brands fa-facebook"></i></a></li>
                             </ul>
                         </div>     
                     </div>
@@ -678,19 +671,19 @@
                         <div class="team-image">
                             <div class="team-bg dark-version"style="background-image: url({% static 'assets/images/team-bg-home-2.png)' %}"></div>
                             <div class="team-bg light-version"style="background-image: url({% static 'assets/images/team-light-bg-home-2.png)' %}"></div>
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-2-home-2.png' %}" alt="team-member"></a>                           
+                            <a href="{% url "team" url_title=member.url_title %}"><img src="{% static 'assets/images/team-2-home-2.png' %}" alt="team-member"></a>                           
                         </div>
                         <div class="team-content">
                             <div class="team-bio">
-                                <h4><a href="team-single.html">Savannah Nguyen</a></h4>
+                                <h4><a href="{% url "team" url_title=member.url_title %}">Savannah Nguyen</a></h4>
                                 <span>UI UX Designer</span>
                             </div>
                             <ul class="team-social">
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a ><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a ><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li><a ><i class="fa-solid fa-globe"></i></a></li>
+                                <li><a ><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a ><i class="fa-brands fa-facebook"></i></a></li>
                             </ul>
                         </div>     
                     </div>
@@ -700,19 +693,19 @@
                         <div class="team-image">
                             <div class="team-bg dark-version"style="background-image: url({% static 'assets/images/team-bg-home-2.png)' %}"></div>
                             <div class="team-bg light-version"style="background-image: url({% static 'assets/images/team-light-bg-home-2.png)' %}"></div>
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-3-home-2.png' %}" alt="team-member"></a>                           
+                            <a href="{% url "team" url_title=member.url_title %}"><img src="{% static 'assets/images/team-3-home-2.png' %}" alt="team-member"></a>                           
                         </div>
                         <div class="team-content">
                             <div class="team-bio">
-                                <h4><a href="team-single.html">Devon Lane</a></h4>
+                                <h4><a href="{% url "team" url_title=member.url_title %}">Devon Lane</a></h4>
                                 <span>Web Developer</span>
                             </div>
                             <ul class="team-social">
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a ><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a ><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li><a ><i class="fa-solid fa-globe"></i></a></li>
+                                <li><a ><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a ><i class="fa-brands fa-facebook"></i></a></li>
                             </ul>
                         </div>     
                     </div>
@@ -822,7 +815,7 @@
                 </div>
                 <div class="col-lg-7 wow fadeInRight" data-wow-delay=".2s">
                     <div class="section-top-btn">
-                        <a href="blog.html" class="primary-btn">see all <span><i class="ri-arrow-right-up-line"></i></span></a>
+                        <a href="{% url "blog" %}" class="primary-btn">see all <span><i class="ri-arrow-right-up-line"></i></span></a>
                     </div>
                 </div>
             </div>
@@ -831,43 +824,43 @@
                 <div class="blog-slider-2">
                     <div class="blog-single-slide-2">
                         <div class="blog-image">
-                            <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-1-home-2.png' %}" alt="blog-thumb"></a>
+                            <a href="{% url "post" url_title=post.url_title %}" class="blog-thumb"><img src="{% static 'assets/images/blog-1-home-2.png' %}" alt="blog-thumb"></a>
                         </div>
                         <h4>
-                            <a href="blog-single.html">Marketing Agency Website Design</a>
+                            <a href="{% url "post" url_title=post.url_title %}">Marketing Agency Website Design</a>
                         </h4>
                         <p class="mt-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                        <a class="blog-btn mt-20" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
+                        <a class="blog-btn mt-20" href="{% url "post" url_title=post.url_title %}">Read More <span><i class="fas fa-arrow-right"></i></span></a>
                     </div>
                     <div class="blog-single-slide-2">
                         <div class="blog-image">
-                            <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-2-home-2.png' %}" alt="blog-thumb"></a>
+                            <a href="{% url "post" url_title=post.url_title %}" class="blog-thumb"><img src="{% static 'assets/images/blog-2-home-2.png' %}" alt="blog-thumb"></a>
                         </div>
                         <h4>
-                            <a href="blog-single.html">Marketing Agency Website Design</a>
+                            <a href="{% url "post" url_title=post.url_title %}">Marketing Agency Website Design</a>
                         </h4>
                         <p class="mt-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                        <a class="blog-btn mt-20" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
+                        <a class="blog-btn mt-20" href="{% url "post" url_title=post.url_title %}">Read More <span><i class="fas fa-arrow-right"></i></span></a>
                     </div>
                     <div class="blog-single-slide-2">
                         <div class="blog-image">
-                            <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-3-home-2.png' %}" alt="blog-thumb"></a>
+                            <a href="{% url "post" url_title=post.url_title %}" class="blog-thumb"><img src="{% static 'assets/images/blog-3-home-2.png' %}" alt="blog-thumb"></a>
                         </div>
                         <h4>
-                            <a href="blog-single.html">Marketing Agency Website Design</a>
+                            <a href="{% url "post" url_title=post.url_title %}">Marketing Agency Website Design</a>
                         </h4>
                         <p class="mt-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                        <a class="blog-btn mt-20" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
+                        <a class="blog-btn mt-20" href="{% url "post" url_title=post.url_title %}">Read More <span><i class="fas fa-arrow-right"></i></span></a>
                     </div>
                     <div class="blog-single-slide-2">
                         <div class="blog-image">
-                            <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-2-home-2.png' %}" alt="blog-thumb"></a>
+                            <a href="{% url "post" url_title=post.url_title %}" class="blog-thumb"><img src="{% static 'assets/images/blog-2-home-2.png' %}" alt="blog-thumb"></a>
                         </div>
                         <h4>
-                            <a href="blog-single.html">Marketing Agency Website Design</a>
+                            <a href="{% url "post" url_title=post.url_title %}">Marketing Agency Website Design</a>
                         </h4>
                         <p class="mt-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                        <a class="blog-btn mt-20" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
+                        <a class="blog-btn mt-20" href="{% url "post" url_title=post.url_title %}">Read More <span><i class="fas fa-arrow-right"></i></span></a>
                     </div>
                 </div>
             </div>
@@ -910,10 +903,10 @@
                                 </form>
                             </div>
                             <ul class="hero-social-2">
-                                <li><a href="#">facebook</a></li>
-                                <li><a href="#">twitter</a></li>
-                                <li><a href="#">linkedin</a></li>
-                                <li><a href="#">instagram</a></li>
+                                <li><a >facebook</a></li>
+                                <li><a >twitter</a></li>
+                                <li><a >linkedin</a></li>
+                                <li><a >instagram</a></li>
                             </ul>
                         </div>
                     </div>
@@ -921,9 +914,9 @@
                         <div class="footer-widget-box-2 contact-widget">
                             <h2>Get in Touch</h2>
                             <ul>
-                                <li><a href="#">info@procus.com</a></li>
-                                <li><a href="#">+99(0) 1453 123456</a></li>
-                                <li><a href="#">1901 Thornridge Cir. Shiloh, Hawaii 81063</a></li>
+                                <li><a >info@procus.com</a></li>
+                                <li><a >+99(0) 1453 123456</a></li>
+                                <li><a >1901 Thornridge Cir. Shiloh, Hawaii 81063</a></li>
                             </ul>
                         </div>
                     </div>
@@ -938,14 +931,14 @@
                     <div class="row">
                         <div class="col-lg-6 align-self-center">
                             <p class="copyright-text">
-                                Copyright &copy; <span id="date"></span> <a href="index.html"> Procus</a> Designed by Pointer Flow.
+                                Copyright &copy; <span id="date"></span> <a href="/"> Procus</a> Designed by Pointer Flow.
                             </p>
                         </div>
                         <div class="col-lg-6 align-self-center">
                             <ul class="footer-menu">
-                                <li><a href="terms.html">Terms Of Services</a></li>
-                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                <li><a href="contact.html">Support</a></li>
+                                <li><a href="{% url "terms" %}">Terms Of Services</a></li>
+                                <li><a href="{% url "privacy" %}">Privacy Policy</a></li>
+                                <li><a href="{% url "contact-us" %}">Support</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1064,30 +1057,31 @@
             <div class="row mt-60">
                 <div class="col-lg-12">
                     <ul class="accordion-list">
-                        <li class="wow fadeInUp" data-wow-delay=".2s">
-                            <h3><span class="space-right">01</span>Audience Growth</h3>
+                        {% for service in services %}
+                        <li class="wow fadeInUp" data-wow-delay=".{{forloop.counter}}s">
+                            <h3><span class="space-right">{{forloop.counter}}</span>{{service.title}}</h3>
                             <div class="answer">
                                 <div class="row align-items-center">
                                     <div class="col-lg-6">
-                                        <p>We’ll expand your following across key platforms, driving organic growth through tailored strategies, influencer collaborations, and targeted content.</p>
-                                        <p>Partner with us to stay ahead in the digital landscape and achieve sustainable growth.</p>
-                                        <a href="service-single.html" class="primary-btn mt-20">Learn More <span><i class="ri-arrow-right-up-line"></i></span></a>
+                                        <p>{{service.text}}</p>
+                                        <a href="{% url "service" url_title=service.url_title %}" class="primary-btn mt-20">Learn More <span><i class="ri-arrow-right-up-line"></i></span></a>
                                     </div>
                                     <div class="col-lg-6">
-                                        <img src="{% static 'assets/images/service-image-1.png' %}" alt="service-image" class="service-image">
+                                        <img src="{{service.small_image.url}}" alt="service-image" class="service-image">
                                     </div>
                                 </div>                            
                             </div>
                         </li>
+                        {% endfor %}
 
-                        <li class="wow fadeInUp" data-wow-delay=".3s">
+                        {% comment %} <li class="wow fadeInUp" data-wow-delay=".3s">
                             <h3><span class="space-right">02</span>Product Creation</h3>
                             <div class="answer">
                                 <div class="row align-items-center">
                                     <div class="col-lg-6">
                                         <p>From ideation to execution, we help you create products that resonate with your audience—whether it’s merchandise, digital goods, or exclusive experiences.</p>
                                         <p>Our Content Product Creation Service Seamlessly Blends Creativity and Strategy to Deliver Tailored Solutions.</p>
-                                        <a href="service-single.html" class="primary-btn mt-20">Learn More <span><i class="ri-arrow-right-up-line"></i></span></a>
+                                        <a href="{% url "service" url_title=service.url_title %}" class="primary-btn mt-20">Learn More <span><i class="ri-arrow-right-up-line"></i></span></a>
                                     </div>
                                     <div class="col-lg-6">
                                         <img src="{% static 'assets/images/service-image-2.png' %}" alt="service-image" class="service-image">
@@ -1103,7 +1097,7 @@
                                     <div class="col-lg-6">
                                         <p>Once your product is ready, we’ll handle everything from online store setup to fulfillment, maximizing your sales potential.</p>
                                         <p>Boost your profits with our impactful campaigns and watch your sales soar.</p>
-                                        <a href="service-single.html" class="primary-btn mt-20">Learn More <span><i class="ri-arrow-right-up-line"></i></span></a>
+                                        <a href="{% url "service" url_title=service.url_title %}" class="primary-btn mt-20">Learn More <span><i class="ri-arrow-right-up-line"></i></span></a>
                                     </div>
                                     <div class="col-lg-6">
                                         <img src="{% static 'assets/images/service-image-3.png' %}" alt="service-image" class="service-image">
@@ -1118,14 +1112,14 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-6">
                                         <p>Our compensation is tied to your success. We negotiate a flexible percentage, so our goals are always aligned with yours.</p>
-                                        <a href="service-single.html" class="primary-btn mt-20">Learn More <span><i class="ri-arrow-right-up-line"></i></span></a>
+                                        <a href="{% url "service" url_title=service.url_title %}" class="primary-btn mt-20">Learn More <span><i class="ri-arrow-right-up-line"></i></span></a>
                                     </div>
                                     <div class="col-lg-6">
                                         <img src="{% static 'assets/images/service-image-4.png' %}" alt="service-image" class="service-image">
                                     </div>
                                 </div>                            
                             </div>
-                        </li>
+                        </li> {% endcomment %}
 
                         {% comment %} <li class="wow fadeInUp" data-wow-delay=".2s">
                             <h3><span class="space-right">05</span>Digital Marketing</h3>
@@ -1134,7 +1128,7 @@
                                     <div class="col-lg-6">
                                         <p>Our Product Branding Services Craft a Unique Identity for Your Products, Creating a Strong, Memorable Impression That Resonates with Your Target Market and Differentiates You from Competitors. Our Product Branding Services Craft a Unique Identity for Your Products.</p>
                                         <p>Strengthen your brand's market position with our expert branding services and leave a lasting impact.</p>
-                                        <a href="service-single.html" class="primary-btn mt-20">Learn More <span><i class="ri-arrow-right-up-line"></i></span></a>
+                                        <a href="{% url "service" url_title=service.url_title %}" class="primary-btn mt-20">Learn More <span><i class="ri-arrow-right-up-line"></i></span></a>
                                     </div>
                                     <div class="col-lg-6">
                                         <img src="{% static 'assets/images/service-image-5.png' %}" alt="service-image" class="service-image">
@@ -1160,7 +1154,7 @@
                 </div>
                 <div class="col-xl-7 col-lg-6 wow fadeInRight" data-wow-delay=".2s">
                     <div class="section-top-btn">
-                        <a href="case.html" class="secondary-btn">See More</a>
+                        <a href="{% url "cases" %}" class="secondary-btn">See More</a>
                     </div>
                 </div>
             </div>
@@ -1169,56 +1163,19 @@
             <div class="row mt-60">
                 <div class="col-12">
                     <div class="portfolio-slider">
+
+                        {% for case in cases %}
                         <div class="portfolio-single">
                             <div class="portfolio-image">
-                                <a href="case.html"><img src="{% static 'assets/images/portfolio-01.png' %}" alt="portfolio-image"></a>
-                                <a href="case-single.html" class="portfolio-btn">view details <span><i class="fas fa-arrow-right"></i></span></a>
+                                <a href="{% url "cases" %}"><img src="{{case.left_big_image.url}}" alt="portfolio-image"></a>
+                                <a href="{% url "case" url_title=case.url_title %}" class="portfolio-btn">view details <span><i class="fas fa-arrow-right"></i></span></a>
                             </div>
                             <div class="portfolio-content mt-20">
-                                <h3><a href="case.html">Shopify Responsive Website Design</a></h3>
-                                <p class="mt-10">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence.</p>
+                                <h3><a href="{% url "cases" %}">{{case.title}}</a></h3>
+                                <p class="mt-10">{{case.small_overview}}</p>
                             </div>
                         </div>
-                        <div class="portfolio-single">
-                            <div class="portfolio-image">
-                                <a href="case.html"><img src="{% static 'assets/images/portfolio-02.png' %}" alt="portfolio-image"></a>
-                                <a href="case-single.html" class="portfolio-btn">view details <span><i class="fas fa-arrow-right"></i></span></a>
-                            </div>
-                            <div class="portfolio-content mt-20">
-                                <h3><a href="case.html">Digital Agency Website Design</a></h3>
-                                <p class="mt-10">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence.</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-single">
-                            <div class="portfolio-image">
-                                <a href="case.html"><img src="{% static 'assets/images/portfolio-03.png' %}" alt="portfolio-image"></a>
-                                <a href="case-single.html" class="portfolio-btn">view details <span><i class="fas fa-arrow-right"></i></span></a>
-                            </div>
-                            <div class="portfolio-content mt-20">
-                                <h3><a href="case.html">web design for your business</a></h3>
-                                <p class="mt-10">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence.</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-single">
-                            <div class="portfolio-image">
-                                <a href="case.html"><img src="{% static 'assets/images/portfolio-04.png' %}" alt="portfolio-image"></a>
-                                <a href="case-single.html" class="portfolio-btn">view details <span><i class="fas fa-arrow-right"></i></span></a>
-                            </div>
-                            <div class="portfolio-content mt-20">
-                                <h3><a href="case.html">build your product with laravel</a></h3>
-                                <p class="mt-10">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence.</p>
-                            </div>
-                        </div>
-                        <div class="portfolio-single">
-                            <div class="portfolio-image">
-                                <a href="case.html"><img src="{% static 'assets/images/portfolio-02.png' %}" alt="portfolio-image"></a>
-                                <a href="case-single.html" class="portfolio-btn">view details <span><i class="fas fa-arrow-right"></i></span></a>
-                            </div>
-                            <div class="portfolio-content mt-20">
-                                <h3><a href="case.html">Shopify Responsive Website Design</a></h3>
-                                <p class="mt-10">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence.</p>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -1242,60 +1199,14 @@
             <div class="row mt-60">
                 <div class="col-lg-12">
                     <div class="brand-slider">
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/slack-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/tinder-dark.png' %}" alt="brand-logo">
+                        {% for client in clients %}
+                            <div class="brand-single">
+                                <div class="brand-logo">
+                                    <img class="dark-version" src="{{client.logo.url}}" alt="brand-logo">
+                                    <img class="light-version" src="{{client.logo.url}}" alt="brand-logo">
+                                </div>
                             </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/zoom-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/zoom-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/spotify-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/spotify-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/square-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/square-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/upwork-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/upwork-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/loom-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/loom-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/trello-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/tinder-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/docusign-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/zoom-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
-                        <div class="brand-single">
-                            <div class="brand-logo">
-                                <img class="dark-version" src="{% static 'assets/images/stripe-logo.png' %}" alt="brand-logo">
-                                <img class="light-version" src="{% static 'assets/images/loom-dark.png' %}" alt="brand-logo">
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -1317,81 +1228,33 @@
             <div class="row mt-60">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="testimonial-slider">
-                        <div class="testimonial-slide">
-                            <div class="testimonial-slide-bg dark-version" style="background-image: url({% static 'assets/images/testimonial-slide-bg.png)' %}"></div>
-                            <div class="testimonial-slide-bg light-version" style="background-image: url({% static 'assets/images/testimonial-slide-light-bg.png)' %}"></div>
-                            <div class="testimonial-quote text-center">
-                                <span class="testimonial-quote-icon"><i class="fa-solid fa-quote-left"></i></span>
-                                <span class="quote-text">Efficient and professional. I will definitely use their services again. The professionalism of this team made the entire process effortless and stress-free.</span>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="content-left">
-                                    <div class="author-img">
-                                        <img src="{% static 'assets/images/testimonial-01.png' %}" alt="author-image">
-                                    </div>
-                                    <div class="author-text">
-                                        <h4>Courtney Henry</h4>
-                                        <p>digital marketer</p>
-                                    </div>
+                        {% for client in clients %}
+                            <div class="testimonial-slide">
+                                <div class="testimonial-slide-bg dark-version" style="background-image: url({% static 'assets/images/testimonial-slide-bg.png)' %}"></div>
+                                <div class="testimonial-slide-bg light-version" style="background-image: url({% static 'assets/images/testimonial-slide-light-bg.png)' %}"></div>
+                                <div class="testimonial-quote text-center">
+                                    <span class="testimonial-quote-icon"><i class="fa-solid fa-quote-left"></i></span>
+                                    <span class="quote-text">{{client.testimonial}}</span>
                                 </div>
-                                <div class="content-right">
-                                    <div class="author-text">
-                                        <h4>Teriso Station</h4>
-                                        <p>creative agency</p>
+                                <div class="testimonial-content">
+                                    <div class="content-left">
+                                        <div class="author-img">
+                                            <img src="{{client.image.url}}" alt="author-image">
+                                        </div>
+                                        <div class="author-text">
+                                            <h4>{{client.name}}</h4>
+                                            <p>{{client.description}}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-slide">
-                            <div class="testimonial-slide-bg dark-version" style="background-image: url({% static 'assets/images/testimonial-slide-bg.png)' %}"></div>
-                            <div class="testimonial-slide-bg light-version" style="background-image: url({% static 'assets/images/testimonial-slide-light-bg.png)' %}"></div>
-                            <div class="testimonial-quote text-center">
-                                <span class="testimonial-quote-icon"><i class="fa-solid fa-quote-left"></i></span>
-                                <span class="quote-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, explicabo velit quod reprehenderit tempore quibusdam inventore quo excepturi.</span>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="content-left">
-                                    <div class="author-img">
-                                        <img src="{% static 'assets/images/testimonial-02.jpg' %}" alt="author-image">
-                                    </div>
-                                    <div class="author-text">
-                                        <h4>Sylvia H Green</h4>
-                                        <p>Web developer</p>
-                                    </div>
-                                </div>
-                                <div class="content-right">
-                                    <div class="author-text">
-                                        <h4>Reid E But</h4>
-                                        <p>customer</p>
+                                    <div class="content-right">
+                                        <div class="author-text">
+                                            <h4>{{client.bussiness_name}}</h4>
+                                            <p>{{client.bussiness_role}}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="testimonial-slide">
-                            <div class="testimonial-slide-bg dark-version" style="background-image: url({% static 'assets/images/testimonial-slide-bg.png)' %}"></div>
-                            <div class="testimonial-slide-bg light-version" style="background-image: url({% static 'assets/images/testimonial-slide-light-bg.png)' %}"></div>
-                            <div class="testimonial-quote text-center">
-                                <span class="testimonial-quote-icon"><i class="fa-solid fa-quote-left"></i></span>
-                                <span class="quote-text">Explicabo hic quibusdam expedita eaque tempore laboriosam. Animi aliquam dolore laborum numquam earum minima eius ducimus.</span>
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="content-left">
-                                    <div class="author-img">
-                                        <img src="{% static 'assets/images/testimonial-03.jpg' %}" alt="author-image">
-                                    </div>
-                                    <div class="author-text">
-                                        <h4>Reid E But</h4>
-                                        <p>digital marketer</p>
-                                    </div>
-                                </div>
-                                <div class="content-right">
-                                    <div class="author-text">
-                                        <h4>Sylvia H Green</h4>
-                                        <p>creative agency</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -1410,50 +1273,62 @@
                 </div>
                 <div class="col-xl-7 col-lg-6 wow fadeInRight" data-wow-delay=".2s">
                     <div class="section-top-btn">
-                        <a href="team.html" class="secondary-btn">See More</a>
+                        <a href="{% url "members" %}" class="secondary-btn">See More</a>
                     </div>
                 </div>
             </div>
             <div class="row mt-60">
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".3s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-01.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
+                {% for member in team_members %}
+                    <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".3s">
+                        <div class="team-member">
+                            <div class="team-image">
+                                <a href="{% url "team" url_title=member.url_title %}"><img src="{{member.image.url}}" alt="team-member"></a>
+                                <div class="hover-state">
+                                    <div class="team-content">
+                                        <div class="team-bio">
+                                            <h4><a href="{% url "team" url_title=member.url_title %}">{{member.name}}</a></h4>
+                                            <span>{{member.role}}</span>
+                                        </div>
                                     </div>
+                                    <ul class="team-social">
+                                        {% if member.twitter %}
+                                        <li><a href="{{member.twitter}}"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                        {% endif %}
+                                        {% if member.linkedin %}
+                                        <li><a href="{{member.linkedin}}"><i class="fa-brands fa-linkedin"></i></a></li>
+                                        {% endif %}
+                                        {% if member.website %}
+                                        <li><a href="{{member.website}}"><i class="fa-brands fa-globe"></i></a></li>
+                                        {% endif %}
+                                        {% if member.instagram %}
+                                        <li><a href="{{member.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                                        {% endif %}
+                                        {% if member.facebook %}
+                                        <li><a href="{{member.facebook}}"><i class="fa-brands fa-facebook"></i></a></li>
+                                        {% endif %}
+                                    </ul>
                                 </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".4s">
+                {% endfor %}
+                {% comment %} <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".4s">
                     <div class="team-member">
                         <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-02.png' %}" alt="team-member"></a>
+                            <a href="{% url "team" url_title=member.url_title %}"><img src="{% static 'assets/images/team-member-02.png' %}" alt="team-member"></a>
                             <div class="hover-state">
                                 <div class="team-content">
                                     <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
+                                        <h4><a href="{% url "team" url_title=member.url_title %}">Savannah Nguyen</a></h4>
                                         <span>founder & CEO</span>
                                     </div>
                                 </div>
                                 <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-x-twitter"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <li><a ><i class="fa-solid fa-globe"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-facebook"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1462,20 +1337,20 @@
                 <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".5s">
                     <div class="team-member">
                         <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-03.png' %}" alt="team-member"></a>
+                            <a href="{% url "team" url_title=member.url_title %}"><img src="{% static 'assets/images/team-member-03.png' %}" alt="team-member"></a>
                             <div class="hover-state">
                                 <div class="team-content">
                                     <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
+                                        <h4><a href="{% url "team" url_title=member.url_title %}">Savannah Nguyen</a></h4>
                                         <span>founder & CEO</span>
                                     </div>
                                 </div>
                                 <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-x-twitter"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <li><a ><i class="fa-solid fa-globe"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-facebook"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1484,20 +1359,20 @@
                 <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".6s">
                     <div class="team-member">
                         <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-04.png' %}" alt="team-member"></a>
+                            <a href="{% url "team" url_title=member.url_title %}"><img src="{% static 'assets/images/team-member-04.png' %}" alt="team-member"></a>
                             <div class="hover-state">
                                 <div class="team-content">
                                     <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
+                                        <h4><a href="{% url "team" url_title=member.url_title %}">Savannah Nguyen</a></h4>
                                         <span>founder & CEO</span>
                                     </div>
                                 </div>
                                 <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-x-twitter"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <li><a ><i class="fa-solid fa-globe"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-facebook"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1506,20 +1381,20 @@
                 <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".7s">
                     <div class="team-member">
                         <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-05.png' %}" alt="team-member"></a>
+                            <a href="{% url "team" url_title=member.url_title %}"><img src="{% static 'assets/images/team-member-05.png' %}" alt="team-member"></a>
                             <div class="hover-state">
                                 <div class="team-content">
                                     <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
+                                        <h4><a href="{% url "team" url_title=member.url_title %}">Savannah Nguyen</a></h4>
                                         <span>founder & CEO</span>
                                     </div>
                                 </div>
                                 <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-x-twitter"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <li><a ><i class="fa-solid fa-globe"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-facebook"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1528,25 +1403,25 @@
                 <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".8s">
                     <div class="team-member">
                         <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-06.png' %}" alt="team-member"></a>
+                            <a href="{% url "team" url_title=member.url_title %}"><img src="{% static 'assets/images/team-member-06.png' %}" alt="team-member"></a>
                             <div class="hover-state">
                                 <div class="team-content">
                                     <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
+                                        <h4><a href="{% url "team" url_title=member.url_title %}">Savannah Nguyen</a></h4>
                                         <span>founder & CEO</span>
                                     </div>
                                 </div>
                                 <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-x-twitter"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-linkedin"></i></a></li>
+                                    <li><a ><i class="fa-solid fa-globe"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a ><i class="fa-brands fa-facebook"></i></a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>
         </div>
     </section>
@@ -1560,7 +1435,7 @@
                 <div class="col-lg-10 offset-lg-1 wow fadeInUp" data-wow-delay=".2s">
                     <div class="cta-box" style="background-image: url({% static 'assets/images/cta-box-bg.png)' %}">
                         <h2>Let`s work on something cool great together</h2>
-                        <a href="contact.html" class="primary-btn mt-40">learn more <span><i class="ri-arrow-right-up-line"></i></span></a>
+                        <a href="{% url "contact-us" %}" class="primary-btn mt-40">learn more <span><i class="ri-arrow-right-up-line"></i></span></a>
                     </div>
                 </div>
             </div>
@@ -1578,7 +1453,7 @@
                 </div>
                 <div class="col-xl-7 col-lg-6 wow fadeInRight" data-wow-delay=".2s">
                     <div class="section-top-btn">
-                        <a href="blog.html" class="secondary-btn">See More</a>
+                        <a href="{% url "blog" %}" class="secondary-btn">See More</a>
                     </div>
                 </div>
             </div>
@@ -1587,114 +1462,35 @@
             <div class="row mt-60">
                 <div class="col-12">
                     <div class="blog-slider">
-                        <div class="blog-single-slide">
-                            <div class="blog-image">
-                                <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-thum-01.png' %}" alt="blog-thumb"></a>
+                        {% for post in posts %}
+                            <div class="blog-single-slide">
+                                <div class="blog-image">
+                                    <a href="{% url "post" url_title=post.url_title %}" class="blog-thumb"><img src="{{post.image.url}}" alt="blog-thumb"></a>
+                                </div>
+                                <div class="blog-meta">
+                                    <ul class="d-flex align-items-center">
+                                        <li>By <a>IMA</a></li>
+                                        <li class="separator">|</li>
+                                        <li>{{post.date}}</li>
+                                    </ul>
+                                    <ul>
+                                        <li><i class="fa-solid fa-book-open"></i> {{post.read_time}}</li>
+                                    </ul>
+                                </div>
+                                <h4>
+                                    <a href="{% url "post" url_title=post.url_title %}">{{post.title}}</a>
+                                </h4>
+                                <p class="mt-20">{{post.mini_description}}</p>
+                                <div class="blog-tags">
+                                    <ul>
+                                        {% for tag in posts.tags.split %}
+                                            <li><a href="{% url "post" url_title=post.url_title %}">{{tag}}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <a class="blog-btn mt-30" href="{% url "post" url_title=post.url_title %}">Read More <span><i class="fas fa-arrow-right"></i></span></a>
                             </div>
-                            <div class="blog-meta">
-                                <ul class="d-flex align-items-center">
-                                    <li>By <a href="index.html">IMA</a></li>
-                                    <li class="separator">|</li>
-                                    <li>23 March 2023</li>
-                                </ul>
-                                <ul>
-                                    <li><i class="fa-solid fa-book-open"></i> 4 min read</li>
-                                </ul>
-                            </div>
-                            <h4>
-                                <a href="blog-single.html">Transforming Digital Solutions with  Artificial Intelligence</a>
-                            </h4>
-                            <p class="mt-20">We delve into the profound impact that Artificial Intelligence (AI) is having on digital solutions across various industries.</p>
-                            <div class="blog-tags">
-                                <ul>
-                                    <li><a href="blog-single.html">Artificial Intelligence</a></li>
-                                    <li><a href="blog-single.html">Machine Learning</a></li>
-                                    <li><a href="blog-single.html">Deep Learning</a></li>
-                                </ul>
-                            </div>
-                            <a class="blog-btn mt-30" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
-                        </div>
-                        <div class="blog-single-slide">
-                            <div class="blog-image">
-                                <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-thum-02.png' %}" alt="blog-thumb"></a>
-                            </div>
-                            <div class="blog-meta">
-                                <ul class="d-flex align-items-center">
-                                    <li>By <a href="index.html">IMA</a></li>
-                                    <li class="separator">|</li>
-                                    <li>23 March 2023</li>
-                                </ul>
-                                <ul>
-                                    <li><i class="fa-solid fa-book-open"></i> 4 min read</li>
-                                </ul>
-                            </div>
-                            <h4>
-                                <a href="blog-single.html">The Art of Collaboration in Creative Agency Studio</a>
-                            </h4>
-                            <p class="mt-20">In this blog post, we explore the dynamics of collaboration within and between creative agencies.</p>
-                            <div class="blog-tags">
-                                <ul>
-                                    <li><a href="blog-single.html">creative agency</a></li>
-                                    <li><a href="blog-single.html">product</a></li>
-                                    <li><a href="blog-single.html">digital</a></li>
-                                </ul>
-                            </div>
-                            <a class="blog-btn mt-30" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
-                        </div>
-                        <div class="blog-single-slide">
-                            <div class="blog-image">
-                                <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-thum-03.png' %}" alt="blog-thumb"></a>
-                            </div>
-                            <div class="blog-meta">
-                                <ul class="d-flex align-items-center">
-                                    <li>By <a href="index.html">IMA</a></li>
-                                    <li class="separator">|</li>
-                                    <li>23 March 2023</li>
-                                </ul>
-                                <ul>
-                                    <li><i class="fa-solid fa-book-open"></i> 4 min read</li>
-                                </ul>
-                            </div>
-                            <h4>
-                                <a href="blog-single.html">Enhancing Creativity with Machine Learning</a>
-                            </h4>
-                            <p class="mt-20">Explore how AI is revolutionizing the design process, from generating innovative concepts to automating.</p>
-                            <div class="blog-tags">
-                                <ul>
-                                    <li><a href="blog-single.html">Artificial Intelligence </a></li>
-                                    <li><a href="blog-single.html">Machine Learning</a></li>
-                                    <li><a href="blog-single.html">Deep Learning</a></li>
-                                </ul>
-                            </div>
-                            <a class="blog-btn mt-30" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
-                        </div>
-                        <div class="blog-single-slide">
-                            <div class="blog-image">
-                                <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-thum-02.png' %}" alt="blog-thumb"></a>
-                            </div>
-                            <div class="blog-meta">
-                                <ul class="d-flex align-items-center">
-                                    <li>By <a href="index.html">IMA</a></li>
-                                    <li class="separator">|</li>
-                                    <li>23 March 2023</li>
-                                </ul>
-                                <ul>
-                                    <li><i class="fa-solid fa-book-open"></i> 4 min read</li>
-                                </ul>
-                            </div>
-                            <h4>
-                                <a href="blog-single.html">The Art of Collaboration in Creative Agency Studio</a>
-                            </h4>
-                            <p class="mt-20">In this blog post, we explore the dynamics of collaboration within and between creative agencie.</p>
-                            <div class="blog-tags">
-                                <ul>
-                                    <li><a href="blog-single.html">creative agency</a></li>
-                                    <li><a href="blog-single.html">product</a></li>
-                                    <li><a href="blog-single.html">digital</a></li>
-                                </ul>
-                            </div>
-                            <a class="blog-btn mt-30" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -1707,16 +1503,16 @@
             <div class="marquee">
                 <div class="primary-bg">
                     <div class="marquee-content marquee-row-1">
-                        <span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Website Design <span></span><i class="ri-gemini-fill"></i> App Design <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> UI/UX Design <span></span><i class="ri-gemini-fill"></i> Graphic Design <span></span><i class="ri-gemini-fill"></i> Motion Graphic <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> SEO</span>
-                        <span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Website Design <span></span><i class="ri-gemini-fill"></i> App Design <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> UI/UX Design <span></span><i class="ri-gemini-fill"></i> Graphic Design <span></span><i class="ri-gemini-fill"></i> Motion Graphic <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> SEO</span>
-                        <span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Website Design <span></span><i class="ri-gemini-fill"></i> App Design <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> UI/UX Design <span></span><i class="ri-gemini-fill"></i> Graphic Design <span></span><i class="ri-gemini-fill"></i> Motion Graphic <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> SEO</span>
+                        <span><i class="ri-gemini-fill"></i> Monetization <span></span><i class="ri-gemini-fill"></i> Grow Influence <span></span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> Social media management <span></span><i class="ri-gemini-fill"></i> Designing <span></span><i class="ri-gemini-fill"></i> Video Editing <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> Create Products</span>
+                        <span><i class="ri-gemini-fill"></i> Monetization <span></span><i class="ri-gemini-fill"></i> Grow Influence <span></span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> Social media management <span></span><i class="ri-gemini-fill"></i> Designing <span></span><i class="ri-gemini-fill"></i> Video Editing <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> Create Products</span>
+                        <span><i class="ri-gemini-fill"></i> Monetization <span></span><i class="ri-gemini-fill"></i> Grow Influence <span></span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> Social media management <span></span><i class="ri-gemini-fill"></i> Designing <span></span><i class="ri-gemini-fill"></i> Video Editing <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> Create Products</span>
                     </div>
                 </div>
                 <div class="black-bg">
                     <div class="marquee-content marquee-row-2">
-                        <span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Website Design <span></span><i class="ri-gemini-fill"></i> App Design <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> UI/UX Design <span></span><i class="ri-gemini-fill"></i> Graphic Design <span></span><i class="ri-gemini-fill"></i> Motion Graphic <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> SEO</span>
-                        <span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Website Design <span></span><i class="ri-gemini-fill"></i> App Design <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> UI/UX Design <span></span><i class="ri-gemini-fill"></i> Graphic Design <span></span><i class="ri-gemini-fill"></i> Motion Graphic <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> SEO</span>
-                        <span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Website Design <span></span><i class="ri-gemini-fill"></i> App Design <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> UI/UX Design <span></span><i class="ri-gemini-fill"></i> Graphic Design <span></span><i class="ri-gemini-fill"></i> Motion Graphic <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> SEO</span>
+                        <span><i class="ri-gemini-fill"></i> Monetization <span></span><i class="ri-gemini-fill"></i> Grow Influence <span></span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> Social media management <span></span><i class="ri-gemini-fill"></i> Designing <span></span><i class="ri-gemini-fill"></i> Video Editing <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> Create Products</span>
+                        <span><i class="ri-gemini-fill"></i> Monetization <span></span><i class="ri-gemini-fill"></i> Grow Influence <span></span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> Social media management <span></span><i class="ri-gemini-fill"></i> Designing <span></span><i class="ri-gemini-fill"></i> Video Editing <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> Create Products</span>
+                        <span><i class="ri-gemini-fill"></i> Monetization <span></span><i class="ri-gemini-fill"></i> Grow Influence <span></span><i class="ri-gemini-fill"></i> Branding <span></span><i class="ri-gemini-fill"></i> Development <span></span><i class="ri-gemini-fill"></i> Social media management <span></span><i class="ri-gemini-fill"></i> Designing <span></span><i class="ri-gemini-fill"></i> Video Editing <span></span><i class="ri-gemini-fill"></i> Digital Marketing <span></span><i class="ri-gemini-fill"></i> Create Products</span>
                     </div>
                 </div>
             </div>
@@ -1728,7 +1524,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 wow fadeIn" data-wow-delay=".2s">
-                    <a href="contact.html" class="big-title"><span>Get in touch</span><span class="icon"><i class="ri-arrow-right-up-line"></i></span></a>
+                    <a href="{% url "contact-us" %}" class="big-title"><span>Get in touch</span><span class="icon"><i class="ri-arrow-right-up-line"></i></span></a>
                 </div>
             </div>
         </div>
@@ -1742,21 +1538,21 @@
                 <div class="row footer-widget-wrapper pt-100 pb-70">
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-widget-box about-us">
-                            <a href="index.html" class="footer-logo">
+                            <a href="/" class="footer-logo">
                                 {% comment %} <img src="{% static 'assets/images/logo.png' %}" alt="logo"> {% endcomment %}
                                  IMA
                             </a>
-                            <a href="index.html" class="footer-logo logo-black">
+                            <a href="/" class="footer-logo logo-black">
                                 {% comment %} <img src="{% static 'assets/images/logo-black.png' %}" alt="logo"> {% endcomment %}
                                  IMA
                             </a>
                             <p>We're a dynamic creative agency dedicated to crafting compelling narratives and innovative solutions that resonate with precision.</p>
                             <ul class="footer-social">
-                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li><a ><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a ><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a ><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li><a ><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a ><i class="fa-brands fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -1764,11 +1560,11 @@
                         <div class="footer-widget-box list">
                             <h4 class="footer-widget-title">Quick Links</h4>
                             <ul class="footer-list">
-                                <li><a href="about.html">About us</a></li>
-                                <li><a href="team.html">meet our team</a></li>
-                                <li><a href="case.html">case studies</a></li>
-                                <li><a href="blog.html">latest blog</a></li>
-                                <li><a href="contact.html">contact</a></li>
+                                <li><a href="{% url "about-us" %}">About us</a></li>
+                                <li><a href="{% url "members" %}">meet our team</a></li>
+                                <li><a href="{% url "cases" %}">case studies</a></li>
+                                <li><a href="{% url "blog" %}">latest blog</a></li>
+                                <li><a href="{% url "contact-us" %}">contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1776,11 +1572,9 @@
                         <div class="footer-widget-box list">
                             <h4 class="footer-widget-title">our services</h4>
                             <ul class="footer-list">
-                                <li><a href="service-single.html">branding</a></li>
-                                <li><a href="service-single.html">web design</a></li>
-                                <li><a href="service-single.html">app design</a></li>
-                                <li><a href="service-single.html">saas development</a></li>
-                                <li><a href="service-single.html">digital marketing</a></li>
+                                {% for service in services %}
+                                    <li><a href="{% url "service" url_title=service.url_title %}">{{service.title}}</a></li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -1788,9 +1582,9 @@
                         <div class="footer-widget-box">
                             <h4 class="footer-widget-title">Contact Us</h4>
                             <ul class="footer-contact">
-                                <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-phone"></i></span> (123) 456789000</a></li>
-                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@IMA.com</span></a></li>
-                                <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span> 1498w Fluton ste, STE 2D Chicgo, IL 63867.</a></li>
+                                <li><a ><span class="contact-icon"><i class="fa-solid fa-phone"></i></span> (123) 456789000</a></li>
+                                <li><a ><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@IMA.com</span></a></li>
+                                <li><a ><span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span> 1498w Fluton ste, STE 2D Chicgo, IL 63867.</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1805,14 +1599,14 @@
                     <div class="row">
                         <div class="col-lg-6 align-self-center">
                             <p class="copyright-text">
-                                Copyright &copy; <span id="date"></span> <a href="index.html"> IMA</a> Designed by GS.
+                                Copyright &copy; <span id="date"></span> <a href="/"> IMA</a> Designed by GS.
                             </p>
                         </div>
                         <div class="col-lg-6 align-self-center">
                             <ul class="footer-menu">
-                                <li><a href="terms.html">Terms Of Services</a></li>
-                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                <li><a href="contact.html">Support</a></li>
+                                <li><a href="{% url "terms" %}">Terms Of Services</a></li>
+                                <li><a href="{% url "privacy" %}">Privacy Policy</a></li>
+                                <li><a href="{% url "contact-us" %}">Support</a></li>
                             </ul>
                         </div>
                     </div>

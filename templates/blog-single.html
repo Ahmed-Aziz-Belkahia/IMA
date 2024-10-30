@@ -9,8 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- page title -->
-    <title>Procus - Creative Agency HTML Template</title>
+    <title>IMA - Creative Agency HTML Template</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
     <!-- favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
 
@@ -51,8 +55,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-area">
-                            <a class="dark-version" href="index.html"> <img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
-                            <a class="light-version" href="index.html"> <img src="{% static 'assets/images/logo-black.png' %}" alt="logo"></a>
+                            <a class="IMAlogo" href="/">IMA</a>
                         </div>
                     </div>
                     <div class="col-lg-8 d-none d-lg-block">
@@ -136,14 +139,14 @@
             <div class="row">
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay=".2s">
                     <div class="blog-sidebar">
-                        <div class="procus-widget search-widget mb-40">
+                        {% comment %} <div class="procus-widget search-widget mb-40">
                             <h4 class="widget-title">Search</h4>
                             <form class="search-form">
                                 <input type="text" class="form-control" placeholder="Search Here...">
                                 <button type="submit"><span><i class="fa-solid fa-magnifying-glass"></i></span></button>
                             </form>
-                        </div>
-                        <div class="procus-widget mb-40">
+                        </div> {% endcomment %}
+                        {% comment %} <div class="procus-widget mb-40">
                             <h4 class="widget-title">Blog Categories</h4>
                             <ul class="blog-categories">
                                 <li><a href="blog-single.html">design <span>(4)</span></a></li>
@@ -152,36 +155,24 @@
                                 <li><a href="blog-single.html">marketing <span>(9)</span></a></li>
                                 <li><a href="blog-single.html">Artificial Intelligence <span>(10)</span></a></li>
                             </ul>
-                        </div>
+                        </div> {% endcomment %}
                         <div class="procus-widget recent-post-widget mb-40">
                             <h4 class="widget-title">latest post</h4>
-                            <div class="single-recent-post">
-                                <img src="{% static 'assets/images/blog-thum-02.png' %}" alt="recent-post">
-                                <span class="post-date">23 March 2023</span>
-                                <h5><a href="blog-single.html">The Art of Collaboration in Creative Agency Studio</a></h5>
-                            </div>
-                            <div class="single-recent-post">
-                                <img src="{% static 'assets/images/blog-thum-03.png' %}" alt="recent-post">
-                                <span class="post-date">23 March 2023</span>
-                                <h5><a href="blog-single.html">Enhancing Creativity with Machine Learning</a></h5>
-                            </div>
-                            <div class="single-recent-post">
-                                <img src="{% static 'assets/images/blog-thum-4.png' %}" alt="recent-post">
-                                <span class="post-date">23 March 2023</span>
-                                <h5><a href="blog-single.html">Transforming Digital Solutions with Artificial Intelligence</a></h5>
-                            </div>
+                            {% for f_p in posts %}
+                                <div class="single-recent-post">
+                                    <img src="{{f_p.image.url}}" alt="recent-post">
+                                    <span class="post-date">{{f_p.date}}</span>
+                                    <h5><a href="{% url "post" url_title=f_p.url_title %}">{{f_p.title}}</a></h5>
+                                </div>
+                            {% endfor %}
+                            
                         </div>
                         <div class="procus-widget post-tags-widget mb-40">
                             <h4 class="widget-title">tags</h4>
                             <div class="all-tags">
-                                <a href="blog-single.html">Design</a>
-                                <a href="blog-single.html">UI/UX</a>
-                                <a href="blog-single.html">Business</a>
-                                <a href="blog-single.html">Artificial Intelligence</a>
-                                <a href="blog-single.html">SaaS</a>
-                                <a href="blog-single.html">Machine Learning</a>
-                                <a href="blog-single.html">marketing</a>
-                                <a href="blog-single.html">Development</a>
+                                {% for tag in post.tags.split %}
+                                    <a>{{tag}}</a>
+                                {% endfor %}
                             </div>
                         </div>
                         <div class="procus-widget text-center">
@@ -195,122 +186,108 @@
                 <div class="col-lg-8">
                     <div class="blog-single-slide">
                         <div class="blog-image mb-40 wow fadeInUp" data-wow-delay=".2s">
-                            <img src="{% static 'assets/images/blog-details-1.png' %}" alt="blog-thumb">
+                            <img src="{{post.image.url}}" alt="blog-thumb">
                         </div>
                         <div class="wow fadeInUp" data-wow-delay=".2s">
-                            <h4>Transforming Digital Solutions with  Artificial Intelligence</h4>
+                            <h4>{{post.title}}</h4>
                             <div class="blog-meta">
                                 <ul class="d-flex align-items-center">
-                                    <li>By <a href="index.html">procus</a></li>
+                                    <li>By <a>IMA</a></li>
                                     <li class="separator">|</li>
-                                    <li>23 March 2023</li>
+                                    <li>{{post.date}}</li>
                                 </ul>
                                 <ul>
-                                    <li><i class="fa-solid fa-book-open"></i> 4 min read</li>
+                                    <li><i class="fa-solid fa-book-open"></i> {{post.read_time}}</li>
                                 </ul>
                                 <ul class="blog-tags">
-                                    <li><a href="blog-single.html">Artificial Intelligence</a></li>
-                                    <li><a href="blog-single.html">Machine Learning</a></li>
-                                    <li><a href="blog-single.html">Deep Learning</a></li>
+                                    {% for tag in post.tags.split %}
+                                        <li><a>{{tag}}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
-                            <p class="mt-20">We delve into the profound impact that Artificial Intelligence (AI) is having on digital solutions across various industries. From enhancing user experiences to optimizing. In the realm of technology, the pace of innovation seems to quicken with every passing moment. One of the most revolutionary advancements of our time is undoubtedly Artificial Intelligence (AI). From streamlining operations to enhancing user experiences, AI has woven its way into the very fabric of our digital landscape, transforming the way we interact with technology. Today, we delve into the profound impact AI is having on digital solutions and how it's reshaping the future of industries across the board.</p>
-                            <h4 class="mt-50">The Rise of Intelligent Solutions</h4>
-                            <p class="mt-20">Gone are the days when digital solutions were static and reactive. With AI at the helm, we're witnessing a paradigm shift towards dynamic, proactive systems that can anticipate and adapt to user needs in real-time. Whether it's personalized recommendations on e-commerce platforms or predictive maintenance in industrial settings, AI is the driving force behind these intelligent solutions.</p>
-                            <p class="mt-20">At the heart of every successful digital product lies an exceptional user experience (UX). AI is revolutionizing UX design by enabling hyper-personalization and intuitive interfaces. Through techniques like natural language processing (NLP) and machine learning algorithms, applications can understand user preferences, behavior patterns, and context, leading to tailored experiences that resonate deeply.</p>
-                        </div>
-                        <div class="wow fadeInUp" data-wow-delay=".2s">
-                            <img src="{% static 'assets/images/blog-details-2.png' %}" alt="blog-thumb" class="mt-50">
-                        </div>
-                        <div class="wow fadeInUp" data-wow-delay=".2s">
-                            <h4 class="mt-50">Enhancing User Experiences</h4>
-                            <p class="mt-20">At the heart of every successful digital product lies an exceptional user experience (UX). AI is revolutionizing UX design by enabling hyper-personalization and intuitive interfaces. Through techniques like natural language processing (NLP) and machine learning algorithms, applications can understand user preferences, behavior patterns, and context, leading to tailored experiences that resonate deeply.</p>
-                            <div class="img-group mt-50">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <img src="{% static 'assets/images/blog-details-3.png' %}" alt="blog-thumb" class="mb-30">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <img src="{% static 'assets/images/blog-details-4.png' %}" alt="blog-thumb" class="mb-30">
+                            {% for block in post.get_blocks %}
+                                {% if block.title %}
+                                    <h4 class="mt-50">{{block.title}}</h4>
+                                {% endif %}
+                                {% if block.content %}
+                                    <p class="mt-20">{{block.content}}</p>
+                                {% endif %}
+                                <div class="img-group mt-50">
+                                    <div class="row">
+                                        {% for image in post.images.all %}
+                                            <div class="col-lg-6">
+                                                <img src="{{image.image.url}}" alt="blog-thumb" class="mb-30">
+                                            </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
-                            </div>
-                            <p class="mt-20">At the heart of every successful digital product lies an exceptional user experience (UX). AI is revolutionizing UX design by enabling hyper-personalization and intuitive interfaces. Through techniques like natural language processing (NLP) and machine learning algorithms, applications can understand user preferences, behavior patterns, and context, leading to tailored experiences that resonate deeply with users.</p>
+                            {% endfor %}
+                        </div>
+
+                        <div class="wow fadeInUp" data-wow-delay=".2s">
+                        
+                            {% if post.quote %}
                             <div class="blockquote">
                                 <span class="quote-text">
-                                    “In a digital realm, alive with intelligence beyond our grasp, machines thrive with senses we've yet to fathom, guided by algorithms we'll never fully comprehend.”
+                                    “{{post.quote}}”
                                 </span>
                                 <div class="qutoe-author">
-                                    <div class="author-img">
-                                        <img src="{% static 'assets/images/blockquote.png' %}" alt="author">
-                                    </div>
+                                    {% if post.quote_image %}
+                                    <div class="author-img" style="width: 81px;height: auto;"><img src="{{post.quote_image.url}}" alt="author" style="width: 100%;height: 100%;"></div>
+                                    {% endif %}
                                     <div class="autor-text">
-                                        <h5>Jerome Bell</h5>
-                                        <span>President of Sales</span>
+                                        <h5>{{post.quote_name}}</h5>
+                                        <span>{{post.quote_role}}</span>
                                     </div>
                                 </div>
                             </div>
-                            <p class="mt-40">As AI continues to evolve, so too will its impact on digital solutions. From advancements in deep learning and reinforcement learning to the proliferation of AI-powered IoT devices, the possibilities are boundless. However, with great power comes great responsibility. It's imperative that we approach AI development ethically, ensuring transparency, fairness, and accountability every step of the way.</p>
-                            <h4 class="mt-50">Empowering Decision-Making</h4>
-                            <p class="mt-20">In today's data-driven world, making informed decisions is crucial for success. AI equips organizations with the tools to sift through mountains of data, extract valuable insights, and make data-driven decisions with confidence. Whether it's identifying market trends, detecting anomalies, or forecasting demand, AI algorithms empower decision-makers with actionable intelligence, enabling them to stay ahead of the curve.</p>
+                            {% endif %}
+
                         </div>
-                        <ul class="share-links mt-50 wow fadeInUp" data-wow-delay=".2s">
+                        {% comment %} <ul class="share-links mt-50 wow fadeInUp" data-wow-delay=".2s">
                             <li>share now:</li>
                             <li class="copy-link"><a href="#"><i class="fa-regular fa-copy"></i> copy link</a></li>
                             <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
                             <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
                             <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                        </ul>
+                        </ul> {% endcomment %}
 
                         <span class="separator-line"></span>
 
                         <div class="blog-comments">
-                            <h4>Comments (3)</h4>
+                            <h4>Comments ({{ comments.count }})</h4>
                             <div class="blog-comments-wrapper">
+                                {% for comment in comments %}
                                 <div class="blog-comments-single">
-                                    <img src="{% static 'assets/images/testimonial-01.png' %}" alt="thumb">
+                                    <img src="{% static 'assets/default_pfp.webp' %}" alt="thumb">
                                     <div class="blog-comments-content">
-                                        <h5>Jesse Sinkler</h5>
-                                        <p>There are many variations of passages the majority have suffered in some injected humour or randomised words which don't look even slightly believable.</p>
-                                        <a href="#">Reply</a>
+                                        <h5>{{ comment.name }}</h5>
+                                        <p>{{ comment.content }}</p>
+                                        <span>{{ comment.created_at|date:"F j, Y" }}</span>
                                     </div>
                                 </div>
-                                <div class="blog-comments-single blog-comments-reply">
-                                    <img src="{% static 'assets/images/testimonial-2.png' %}" alt="thumb">
-                                    <div class="blog-comments-content">
-                                        <h5>Daniel Wellman</h5>
-                                        <p>There are many variations of passages the majority have suffered in some injected humour or randomised words which don't look even slightly believable.</p>
-                                        <a href="#">Reply</a>
-                                    </div>
-                                </div>
-                                <div class="blog-comments-single">
-                                    <img src="{% static 'assets/images/testimonial-3.png' %}" alt="thumb">
-                                    <div class="blog-comments-content">
-                                        <h5>Kenneth Evans</h5>
-                                        <p>There are many variations of passages the majority have suffered in some injected humour or randomised words which don't look even slightly believable.</p>
-                                        <a href="#">Reply</a>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
-
+                        
                         <div class="blog-comments-form">
                             <h4>Leave A Comment</h4>
-                            <form action="#">
+                            <form action="" method="post">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Your Name*">
+                                            <input type="text" name="name" class="form-control" placeholder="Your Name*">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email*">
+                                            <input type="email" name="email" class="form-control" placeholder="Your Email*">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" rows="5" placeholder="Your Comment*"></textarea>
+                                            <textarea name="content" class="form-control" rows="5" placeholder="Your Comment*"></textarea>
                                         </div>
                                         <button type="submit" class="primary-btn">get started <span><i class="ri-arrow-right-up-line"></i></span></button>
                                     </div>
@@ -344,10 +321,10 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-widget-box about-us">
                             <a href="index.html" class="footer-logo">
-                                <img src="{% static 'assets/images/logo.png' %}" alt="logo">
+                                IMA
                             </a>
                             <a href="index.html" class="footer-logo logo-black">
-                                <img src="{% static 'assets/images/logo-black.png' %}" alt="logo">
+                                IMA
                             </a>
                             <p>We're a dynamic creative agency dedicated to crafting compelling narratives and innovative solutions that resonate with precision.</p>
                             <ul class="footer-social">
@@ -388,7 +365,7 @@
                             <h4 class="footer-widget-title">Contact Us</h4>
                             <ul class="footer-contact">
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-phone"></i></span> (123) 456789000</a></li>
-                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@procus.com</span></a></li>
+                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@IMA.com</span></a></li>
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span> 1498w Fluton ste, STE 2D Chicgo, IL 63867.</a></li>
                             </ul>
                         </div>
@@ -404,7 +381,7 @@
                     <div class="row">
                         <div class="col-lg-6 align-self-center">
                             <p class="copyright-text">
-                                Copyright &copy; <span id="date"></span> <a href="index.html"> Procus</a> Designed by Pointer Flow.
+                                Copyright &copy; <span id="date"></span> <a href="index.html"> IMA</a> Designed by Pointer Flow.
                             </p>
                         </div>
                         <div class="col-lg-6 align-self-center">

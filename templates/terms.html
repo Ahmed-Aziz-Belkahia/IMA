@@ -11,6 +11,10 @@
     <!-- page title -->
     <title>Procus - Creative Agency HTML Template</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
     <!-- favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
 
@@ -51,60 +55,48 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-area">
-                            <a class="dark-version" href="index.html"> <img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
-                            <a class="light-version" href="index.html"> <img src="{% static 'assets/images/logo-black.png' %}" alt="logo"></a>
+                            <a class="IMAlogo" href="/">IMA</a>
                         </div>
                     </div>
                     <div class="col-lg-8 d-none d-lg-block">
                         <nav id="mobile-menu">
                             <ul class="main-menu">
-                                <li class="has-submenu"><a href="index.html">home</a>
+                                <li class="has-submenu"><a href="/">home</a>
                                     <ul class="submenu">
-                                        <li><a href="index.html">home 01</a></li>
-                                        <li><a href="home-2.html">home 02</a></li>
-                                        <li><a href="home-3.html">home 03</a></li>
+                                        <li><a href="/">home 01</a></li>
+
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="services.html">services</a>
+                                <li class="has-submenu"><a href="{% url "services" %}">services</a>
                                     <ul class="submenu">
-                                        <li><a href="services.html">services</a></li>
-                                        <li><a href="service-single.html">service details</a></li>
+                                        <li><a href="{% url "services" %}">services</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="case.html">case</a>
+                                <li class="has-submenu"><a href="{% url "cases" %}">case</a>
                                     <ul class="submenu">
-                                        <li><a href="case.html">case</a></li>
-                                        <li><a href="case-single.html">case details</a></li>
+                                        <li><a href="{% url "cases" %}">case</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="blog.html">blog</a>
+                                <li class="has-submenu"><a href="{% url "blog" %}">blog</a>
                                     <ul class="submenu">
-                                        <li><a href="blog-6.html">blog full width</a></li>
-                                        <li><a href="blog.html">blog column 2</a></li>
-                                        <li><a href="blog-2.html">blog column 2</a></li>
-                                        <li><a href="blog-3.html">blog list</a></li>
-                                        <li><a href="blog-4.html">blog right sidebar</a></li>
-                                        <li><a href="blog-5.html">blog left sidebar</a></li>
-                                        <li><a href="blog-single.html">blog details</a></li>
+
+                                        <li><a href="{% url "blog" %}">blog column 2</a></li>
+
                                     </ul>
                                 </li>
-                                <li class="has-submenu"><a href="#">pages</a>
+                                <li class="has-submenu"><a >pages</a>
                                     <ul class="submenu">
                                         <li><a href="about.html">about</a></li>
-                                        <li><a href="work-process.html">work process</a></li>
-                                        <li><a href="team.html">team</a></li>
-                                        <li><a href="team-single.html">team details</a></li>
-                                        <li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="error.html">404</a></li>
+                                        <li><a href="{% url "members" %}">team</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">contact</a></li>
+                                <li><a href="{% url "contact-us" %}">contact</a></li>
                             </ul>
                         </nav>
                     </div>
                     <div class="col-lg-2">
                         <div class="nav-right-content">
-                            <a href="contact.html" class="primary-btn">Let’s Talk <span><i class="ri-arrow-right-up-line"></i></span></a>
+                            <a href="{% url "contact-us" %}" class="primary-btn">Let’s Talk <span><i class="ri-arrow-right-up-line"></i></span></a>
                         </div>
                     </div>
                 </div>
@@ -121,7 +113,7 @@
                 <div class="col-12">
                     <h1>Terms and Conditions</h1>
                     <ul class="breadcrumb-meta">
-                        <li><a href="index.html">home</a></li>
+                        <li><a href="/">home</a></li>
                         <li><span><i class="fa-solid fa-angle-right"></i></span></li>
                         <li class="active">Terms and Conditions</li>
                     </ul>
@@ -182,19 +174,19 @@
                 <div class="row footer-widget-wrapper pt-100 pb-70">
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-widget-box about-us">
-                            <a href="index.html" class="footer-logo">
-                                <img src="{% static 'assets/images/logo.png' %}" alt="logo">
+                            <a href="/" class="footer-logo">
+                                IMA
                             </a>
-                            <a href="index.html" class="footer-logo logo-black">
-                                <img src="{% static 'assets/images/logo-black.png' %}" alt="logo">
+                            <a href="/" class="footer-logo logo-black">
+                                IMA
                             </a>
                             <p>We're a dynamic creative agency dedicated to crafting compelling narratives and innovative solutions that resonate with precision.</p>
                             <ul class="footer-social">
-                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                                <li><a ><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a ><i class="fa-brands fa-x-twitter"></i></a></li>
+                                <li><a ><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li><a ><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a ><i class="fa-brands fa-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -203,10 +195,10 @@
                             <h4 class="footer-widget-title">Quick Links</h4>
                             <ul class="footer-list">
                                 <li><a href="about.html">About us</a></li>
-                                <li><a href="team.html">meet our team</a></li>
-                                <li><a href="case.html">case studies</a></li>
-                                <li><a href="blog.html">latest blog</a></li>
-                                <li><a href="contact.html">contact</a></li>
+                                <li><a href="{% url "members" %}">meet our team</a></li>
+                                <li><a href="{% url "cases" %}">case studies</a></li>
+                                <li><a href="{% url "blog" %}">latest blog</a></li>
+                                <li><a href="{% url "contact-us" %}">contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -214,11 +206,11 @@
                         <div class="footer-widget-box list">
                             <h4 class="footer-widget-title">our services</h4>
                             <ul class="footer-list">
-                                <li><a href="service-single.html">branding</a></li>
-                                <li><a href="service-single.html">web design</a></li>
-                                <li><a href="service-single.html">app design</a></li>
-                                <li><a href="service-single.html">saas development</a></li>
-                                <li><a href="service-single.html">digital marketing</a></li>
+                            <ul class="footer-list">
+                                {% for service in services %}
+                                    <li><a href="{% url "service" url_title=service.url_title %}">{{service.title}}</a></li>
+                                {% endfor %}
+                            </ul>
                             </ul>
                         </div>
                     </div>
@@ -226,9 +218,9 @@
                         <div class="footer-widget-box">
                             <h4 class="footer-widget-title">Contact Us</h4>
                             <ul class="footer-contact">
-                                <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-phone"></i></span> (123) 456789000</a></li>
-                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@procus.com</span></a></li>
-                                <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span> 1498w Fluton ste, STE 2D Chicgo, IL 63867.</a></li>
+                                <li><a ><span class="contact-icon"><i class="fa-solid fa-phone"></i></span> (123) 456789000</a></li>
+                                <li><a ><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@procus.com</span></a></li>
+                                <li><a ><span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span> 1498w Fluton ste, STE 2D Chicgo, IL 63867.</a></li>
                             </ul>
                         </div>
                     </div>
@@ -243,14 +235,14 @@
                     <div class="row">
                         <div class="col-lg-6 align-self-center">
                             <p class="copyright-text">
-                                Copyright &copy; <span id="date"></span> <a href="index.html"> Procus</a> Designed by Pointer Flow.
+                                Copyright &copy; <span id="date"></span> <a href="/"> Procus</a> Designed by Pointer Flow.
                             </p>
                         </div>
                         <div class="col-lg-6 align-self-center">
                             <ul class="footer-menu">
-                                <li><a href="terms.html">Terms Of Services</a></li>
-                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                <li><a href="contact.html">Support</a></li>
+                                <li><a href="{% url "terms" %}">Terms Of Services</a></li>
+                                <li><a href="{% url "privacy" %}">Privacy Policy</a></li>
+                                <li><a href="{% url "contact-us" %}">Support</a></li>
                             </ul>
                         </div>
                     </div>

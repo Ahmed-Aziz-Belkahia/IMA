@@ -142,336 +142,40 @@
                 </div>
             </div>
             <div class="row mt-60">
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".3s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-01.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
+                {% for member in team_members %}
+                    <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".3s">
+                        <div class="team-member">
+                            <div class="team-image">
+                                <a href="team-single.html"><img src="{{member.image.url}}" alt="team-member"></a>
+                                <div class="hover-state">
+                                    <div class="team-content">
+                                        <div class="team-bio">
+                                            <h4><a href="team-single.html">{{member.name}}</a></h4>
+                                            <span>{{member.role}}</span>
+                                        </div>
                                     </div>
+                                    <ul class="team-social">
+                                        {% if member.twitter %}
+                                        <li><a href="{{member.twitter}}"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                        {% endif %}
+                                        {% if member.linkedin %}
+                                        <li><a href="{{member.linkedin}}"><i class="fa-brands fa-linkedin"></i></a></li>
+                                        {% endif %}
+                                        {% if member.website %}
+                                        <li><a href="{{member.website}}"><i class="fa-brands fa-globe"></i></a></li>
+                                        {% endif %}
+                                        {% if member.instagram %}
+                                        <li><a href="{{member.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                                        {% endif %}
+                                        {% if member.facebook %}
+                                        <li><a href="{{member.facebook}}"><i class="fa-brands fa-facebook"></i></a></li>
+                                        {% endif %}
+                                    </ul>
                                 </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".3s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-02.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".3s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-03.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".4s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-04.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".4s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-05.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".4s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-06.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".5s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-07.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".5s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-08.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".5s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-09.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".6s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-10.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".6s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-11.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".6s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-12.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".7s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-13.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".7s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-14.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 wow fadeIn" data-wow-delay=".7s">
-                    <div class="team-member">
-                        <div class="team-image">
-                            <a href="team-single.html"><img src="{% static 'assets/images/team-member-15.png' %}" alt="team-member"></a>
-                            <div class="hover-state">
-                                <div class="team-content">
-                                    <div class="team-bio">
-                                        <h4><a href="team-single.html">Savannah Nguyen</a></h4>
-                                        <span>founder & CEO</span>
-                                    </div>
-                                </div>
-                                <ul class="team-social">
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                    <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>

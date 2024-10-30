@@ -9,7 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- page title -->
-    <title>Procus - Creative Agency HTML Template</title>
+    <title>IMA - Creative Agency HTML Template</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
     <!-- favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
@@ -51,8 +55,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-area">
-                            <a class="dark-version" href="index.html"> <img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
-                            <a class="light-version" href="index.html"> <img src="{% static 'assets/images/logo-black.png' %}" alt="logo"></a>
+                            <a class="IMAlogo" href="/">IMA</a>
                         </div>
                     </div>
                     <div class="col-lg-8 d-none d-lg-block">
@@ -139,13 +142,13 @@
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="member-image">
-                                    <img src="{% static 'assets/images/team-details.png' %}" alt="member-image">
+                                    <img src="{{member.image.url}}" alt="member-image">
                                 </div>
                             </div>
                             <div class="col-xl-7 offset-xl-1 col-lg-8">
                                 <div class="member-content">
-                                    <h2>Savannah Nguyen</h2>
-                                    <span>Founder & CEO</span>
+                                    <h2>{{member.name}}</h2>
+                                    <span>{{member.role}}</span>
                                     <div class="member-info mt-40">
                                         <div class="row">
                                             <div class="col-lg-6">
@@ -155,10 +158,11 @@
                                                     </div>
                                                     <div class="info-text">
                                                         <h5>phone</h5>
-                                                        <span>+8801644426943</span>
+                                                        <span>{{member.phone}}</span>
                                                     </div>
                                                 </div>
                                             </div>
+                                            {% if member.website %}
                                             <div class="col-lg-6">
                                                 <div class="single-info">
                                                     <div class="info-icon">
@@ -166,10 +170,11 @@
                                                     </div>
                                                     <div class="info-text">
                                                         <h5>website</h5>
-                                                        <span>www.procus.com</span>
+                                                        <span>{{member.website}}</span>
                                                     </div>
                                                 </div>
                                             </div>
+                                            {% endif %}
                                             <div class="col-lg-6">
                                                 <div class="single-info">
                                                     <div class="info-icon">
@@ -177,7 +182,7 @@
                                                     </div>
                                                     <div class="info-text">
                                                         <h5>email</h5>
-                                                        <span>savannah@procus.com </span>
+                                                        <span>{{member.email}}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,7 +193,7 @@
                                                     </div>
                                                     <div class="info-text">
                                                         <h5>Experiences</h5>
-                                                        <span>5+ Years</span>
+                                                        <span>{{member.experience}}+ Years</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -197,28 +202,36 @@
                                     <div class="member-social mt-20">
                                         <h5>Follow Me for more:</h5>
                                         <ul class="team-social mt-10">
-                                            <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="fa-solid fa-globe"></i></a></li>
-                                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                            {% if member.twitter %}
+                                            <li><a href="{{member.twitter}}"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                            {% endif %}
+                                            {% if member.linkedin %}
+                                            <li><a href="{{member.linkedin}}"><i class="fa-brands fa-linkedin"></i></a></li>
+                                            {% endif %}
+                                            {% if member.website %}
+                                            <li><a href="{{member.website}}"><i class="fa-brands fa-globe"></i></a></li>
+                                            {% endif %}
+                                            {% if member.instagram %}
+                                            <li><a href="{{member.instagram}}"><i class="fa-brands fa-instagram"></i></a></li>
+                                            {% endif %}
+                                            {% if member.facebook %}
+                                            <li><a href="{{member.facebook}}"><i class="fa-brands fa-facebook"></i></a></li>
+                                            {% endif %}
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <h2>Biography of Savannah Nguyen</h2>
-                    <p class="mt-20">Savannah Nguyen is the visionary founder and CEO of Procus Creative Agency, a leading-edge firm specializing in UI/UX design and digital innovation. With a passion for creativity and a keen eye for design, Savannah has dedicated her career to transforming ideas into captivating digital experiences that resonate with audiences around the globe.</p>
-                    <p class="mt-20">Born and raised in a diverse cultural environment, Savannah's early exposure to art, technology, and entrepreneurship fueled her curiosity and shaped her multidisciplinary approach to design. From a young age, she demonstrated a natural aptitude for blending creativity with technology, laying the foundation for her future endeavors in the digital realm.</p>
-                    <p class="mt-20">After earning her degree in Graphic Design from a prestigious design school, Savannah embarked on a journey to explore the intersection of design and technology. She honed her skills working with startups, agencies, and multinational corporations, gaining invaluable experience in UI/UX design, web development, and digital marketing along the way.</p>
+                    <h2>Biography of {{member.name}}</h2>
+                    <p class="mt-20">{{member.bio}}</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- experience education starts -->
-    <section class="experience-education-area py-110">
+    {% comment %} <section class="experience-education-area py-110">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
@@ -277,7 +290,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> {% endcomment %}
 
     <!-- skills & tools starts -->
     <section class="skills-tools-area pt-120 pb-90">
@@ -287,48 +300,19 @@
                     <div class="row">
                         <div class="col-lg-4 wow fadeInLeft" data-wow-delay=".2s">
                             <h2>Skills & tools</h2>
-                            <p class="mt-20">Savannah Nguyen is the visionary founder and CEO of Procus Creative Agency, a leading-edge firm specializing in UI/UX design and digital innovation.</p>
-                            <p class="mt-20">With a passion for creativity and a keen eye for design, Savannah has dedicated her career to transforming ideas into captivating digital experiences that resonate with audiences around the globe.</p>
+                            <p class="mt-20">{{member.skills_bio}}</p>
                         </div>
                         <div class="col-xl-7 offset-xl-1 col-lg-8 wow fadeInRight" data-wow-delay=".2s">
                             <div class="all-tools">
                                 <div class="row">
-                                    <div class="col-md-4 col-6">
-                                        <div class="single-tool">
-                                            <img src="{% static 'assets/images/figma-icon.png' %}" alt="tool">
-                                            <h4>figma</h4>
+                                    {% for skill in member.skills.all %}
+                                        <div class="col-md-4 col-6">
+                                            <div class="single-tool">
+                                                <img src="{{skill.image.url}}" alt="tool">
+                                                <h4>{{skill.name}}</h4>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 col-6">
-                                        <div class="single-tool">
-                                            <img src="{% static 'assets/images/photoshop-icon.png' %}" alt="tool">
-                                            <h4>photoshop</h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-6">
-                                        <div class="single-tool">
-                                            <img src="{% static 'assets/images/illustrator-icon.png' %}" alt="tool">
-                                            <h4>Illustrator</h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-6">
-                                        <div class="single-tool">
-                                            <img src="{% static 'assets/images/framer-icon.png' %}" alt="tool">
-                                            <h4>framer</h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-6">
-                                        <div class="single-tool">
-                                            <img src="{% static 'assets/images/after-effect-icon.png' %}" alt="tool">
-                                            <h4>after effects</h4>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-6">
-                                        <div class="single-tool">
-                                            <img src="{% static 'assets/images/wordpress-icon.png' %}" alt="tool">
-                                            <h4>wordpress</h4>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
@@ -359,10 +343,10 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-widget-box about-us">
                             <a href="index.html" class="footer-logo">
-                                <img src="{% static 'assets/images/logo.png' %}" alt="logo">
+                                IMA
                             </a>
                             <a href="index.html" class="footer-logo logo-black">
-                                <img src="{% static 'assets/images/logo-black.png' %}" alt="logo">
+                                IMA
                             </a>
                             <p>We're a dynamic creative agency dedicated to crafting compelling narratives and innovative solutions that resonate with precision.</p>
                             <ul class="footer-social">
@@ -403,7 +387,7 @@
                             <h4 class="footer-widget-title">Contact Us</h4>
                             <ul class="footer-contact">
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-phone"></i></span> (123) 456789000</a></li>
-                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@procus.com</span></a></li>
+                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@IMA.com</span></a></li>
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span> 1498w Fluton ste, STE 2D Chicgo, IL 63867.</a></li>
                             </ul>
                         </div>
@@ -419,7 +403,7 @@
                     <div class="row">
                         <div class="col-lg-6 align-self-center">
                             <p class="copyright-text">
-                                Copyright &copy; <span id="date"></span> <a href="index.html"> Procus</a> Designed by Pointer Flow.
+                                Copyright &copy; <span id="date"></span> <a href="index.html"> IMA</a> Designed by Pointer Flow.
                             </p>
                         </div>
                         <div class="col-lg-6 align-self-center">

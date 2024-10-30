@@ -9,8 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- page title -->
-    <title>Procus - Creative Agency HTML Template</title>
+    <title>IMA - Creative Agency HTML Template</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
     <!-- favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
 
@@ -51,8 +55,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-area">
-                            <a class="dark-version" href="index.html"> <img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
-                            <a class="light-version" href="index.html"> <img src="{% static 'assets/images/logo-black.png' %}" alt="logo"></a>
+                            <a class="IMAlogo" href="index.html">IMA</a>
                         </div>
                     </div>
                     <div class="col-lg-8 d-none d-lg-block">
@@ -135,7 +138,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 wow fadeInUp" data-wow-delay=".2s">
-                    <img src="{% static 'assets/images/portfolio-04.png' %}" alt="case-image">
+                    <img src="{{case.big_image.url}}" alt="case-image">
                 </div>
             </div>
             <div class="case-info">
@@ -143,56 +146,60 @@
                     <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay=".3s">
                         <div class="single-info">
                             <h4>Category</h4>
-                            <span>Web Development</span>
+                            <span>{{case.category.title}}</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay=".4s">
                         <div class="single-info">
                             <h4>client</h4>
-                            <span>Niox Xiox</span>
+                            <span>{{case.client.name}}</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay=".5s">
                         <div class="single-info">
                             <h4>Timeframe</h4>
-                            <span>2 Months</span>
+                            <span>{{case.timeframe}}</span>
                         </div>
                     </div>
+                    {% if case.webiste %}
                     <div class="col-lg-3 col-sm-6 wow fadeIn" data-wow-delay=".6s">
                         <div class="single-info">
                             <h4>website</h4>
-                            <span>www.niox.com</span>
+                            <span>
+                                <a href="{{case.website}}">{{case.website}}</a>
+                            </span>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
             <div class="wow fadeInUp" data-wow-delay=".2s">
-                <h2>Shopify Responsive Website Design</h2>
+                <h2>{{case.title}}</h2>
                 <h3>Project Overview:</h3>
-                <p class="mt-20">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence. From captivating design to strategic insights, we're here to craft experiences that leave a lasting impact. Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence. From captivating design to strategic insights, we're here to craft experiences that leave a lasting impact.</p>
+                <p class="mt-20">{{case.overview}}</p>
             </div>
             <div class="row mt-50">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
                     <div class="single-box">
                         <h3>Our Approach</h3>
-                        <p class="mt-20">Once the client brief is received, the creative team conducts thorough research and analysis. This includes market research, competitor analysis, and audience demographics. The goal is to gather insights that will inform the creative direction and strategy.</p>
+                        <p class="mt-20">{{case.approach}}</p>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay=".2s">
                     <div class="single-box">
                         <h3>The Solutions</h3>
-                        <p class="mt-20">Once the client brief is received, the creative team conducts thorough research and analysis. This includes market research, competitor analysis, and audience demographics. The goal is to gather insights that will inform the creative direction and strategy.</p>
+                        <p class="mt-20">{{case.solution}}</p>
                     </div>
                 </div>
             </div>
             <div class="case-images-gallery mt-20">
                 <div class="row">
                     <div class="col-lg-8 wow fadeIn" data-wow-delay=".2s">
-                        <img src="{% static 'assets/images/case-gallery-1.png' %}" alt="case-gallery">
+                        <img src="{{case.left_big_image.url}}" alt="case-gallery">
                     </div>
                     <div class="col-lg-4">
-                        <img class="wow fadeIn" data-wow-delay=".3s" src="{% static 'assets/images/case-gallery-2.png' %}" alt="case-gallery">
-                        <img class="wow fadeIn" data-wow-delay=".4s" src="{% static 'assets/images/case-gallery-3.png' %}" alt="case-gallery">
+                        <img class="wow fadeIn" data-wow-delay=".3s" src="{{case.left_small_image1.url}}" alt="case-gallery">
+                        <img class="wow fadeIn" data-wow-delay=".4s" src="{{case.left_small_image2.url}}" alt="case-gallery">
                     </div>
                 </div>
             </div>
@@ -200,7 +207,23 @@
                 <div class="col-12">
                     <h3>Project Requirement:</h3>
                     <div class="row mt-20">
+
+
+                        {% for column in sub_arrays %}
                         <div class="col-md-4 wow fadeIn" data-wow-delay=".2s">
+                            <ul class="requirement-list mt-20">
+                                {% for row in column %}
+                                <li><span><i class="fa-solid fa-circle-check"></i> </span>{{ row }}</li>  
+                                {% endfor %}
+                            </ul>                      
+                        </div>
+                        {% endfor %}
+                        
+
+
+
+
+                        {% comment %} <div class="col-md-4 wow fadeIn" data-wow-delay=".2s">
                             <ul class="requirement-list mt-20">
                                 <li><span><i class="fa-solid fa-circle-check"></i> </span>Requirement Analysis</li>
                                 <li><span><i class="fa-solid fa-circle-check"></i> </span>Site Architecture</li>
@@ -224,25 +247,26 @@
                                 <li><span><i class="fa-solid fa-circle-check"></i> </span>Deployment and Monitoring</li>
                             </ul>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
+
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
                     <h3>The Challenges:</h3>
-                    <p class="mt-20">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence. From captivating design to strategic insights, we're here to craft experiences that leave a lasting impact. Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence. </p>
+                    <p class="mt-20">{{case.challenge}}</p>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay=".2s">
                     <h3>The Result:</h3>
-                    <p class="mt-20">Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence. From captivating design to strategic insights, we're here to craft experiences that leave a lasting impact. Unveil a world of creativity, strategy, and technology as we offer a spectrum of services tailored to elevate your brand's presence. </p>
+                    <p class="mt-20">{{case.result}}</p>
                 </div>
             </div>
-            <ul class="preview-links wow fadeInUp" data-wow-delay=".2s">
+            {% comment %} <ul class="preview-links wow fadeInUp" data-wow-delay=".2s">
                 <li>Live Preview:</li>
                 <li><a href="#"><span><i class="fa-brands fa-github"></i></span> github <span><i class="fas fa-arrow-right"></i></span></a></li>
                 <li><a href="#"><span><i class="fa-brands fa-square-behance"></i></span> behance <span><i class="fas fa-arrow-right"></i></span></a></li>
                 <li><a href="#"><span><i class="fa-brands fa-square-dribbble"></i></span> dribbble <span><i class="fas fa-arrow-right"></i></span></a></li>
-            </ul>
+            </ul> {% endcomment %}
         </div>
     </section>
 
@@ -267,10 +291,10 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-widget-box about-us">
                             <a href="index.html" class="footer-logo">
-                                <img src="{% static 'assets/images/logo.png' %}" alt="logo">
+                                IMA
                             </a>
                             <a href="index.html" class="footer-logo logo-black">
-                                <img src="{% static 'assets/images/logo-black.png' %}" alt="logo">
+                                IMA
                             </a>
                             <p>We're a dynamic creative agency dedicated to crafting compelling narratives and innovative solutions that resonate with precision.</p>
                             <ul class="footer-social">
@@ -311,7 +335,7 @@
                             <h4 class="footer-widget-title">Contact Us</h4>
                             <ul class="footer-contact">
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-phone"></i></span> (123) 456789000</a></li>
-                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@procus.com</span></a></li>
+                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@IMA.com</span></a></li>
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span> 1498w Fluton ste, STE 2D Chicgo, IL 63867.</a></li>
                             </ul>
                         </div>
@@ -327,7 +351,7 @@
                     <div class="row">
                         <div class="col-lg-6 align-self-center">
                             <p class="copyright-text">
-                                Copyright &copy; <span id="date"></span> <a href="index.html"> Procus</a> Designed by Pointer Flow.
+                                Copyright &copy; <span id="date"></span> <a href="index.html"> IMA</a> Designed by Pointer Flow.
                             </p>
                         </div>
                         <div class="col-lg-6 align-self-center">

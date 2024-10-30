@@ -9,8 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- page title -->
-    <title>Procus - Creative Agency HTML Template</title>
+    <title>IMA - Creative Agency HTML Template</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
     <!-- favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
 
@@ -51,8 +55,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-area">
-                            <a class="dark-version" href="index.html"> <img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
-                            <a class="light-version" href="index.html"> <img src="{% static 'assets/images/logo-black.png' %}" alt="logo"></a>
+                            <a class="IMAlogo" href="/">IMA</a>
                         </div>
                     </div>
                     <div class="col-lg-8 d-none d-lg-block">
@@ -142,7 +145,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-60">
+                    {% comment %} <div class="row mt-60">
                         <div class="col-12 wow fadeInUp" data-wow-delay=".3s">
                             <ul class="blog-page-categories">
                                 <li class="active"><a href="#">all post <span class="total-post">20</span></a></li>
@@ -160,184 +163,41 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                     <div class="row mt-20">
-                        <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
-                            <div class="blog-single-slide">
-                                <div class="blog-image">
-                                    <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-thum-01.png' %}" alt="blog-thumb"></a>
+                        {% for post in posts %}
+                            <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
+                                <div class="blog-single-slide">
+                                    <div class="blog-image">
+                                        <a href="{% url "post" url_title=post.url_title %}" class="blog-thumb"><img src="{{post.image.url}}" alt="blog-thumb"></a>
+                                    </div>
+                                    <div class="blog-meta">
+                                        <ul class="d-flex align-items-center">
+                                            <li>By <a href="index.html">IMA</a></li>
+                                            <li class="separator">|</li>
+                                            <li>{{post.date}}</li>
+                                        </ul>
+                                        <ul>
+                                            <li><i class="fa-solid fa-book-open"></i> {{post.read_time}}</li>
+                                        </ul>
+                                    </div>
+                                    <h4>
+                                        <a href="{% url "post" url_title=post.url_title %}">{{post.title}}</a>
+                                    </h4>
+                                    <p class="mt-20">{{post.mini_description}}</p>
+                                    <div class="blog-tags">
+                                        <ul>
+                                            {% for tag in posts.tags.split %}
+                                                <li><a>{{tag}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <a class="blog-btn mt-40" href="{% url "post" url_title=post.url_title %}">Read More <span><i class="fas fa-arrow-right"></i></span></a>
                                 </div>
-                                <div class="blog-meta">
-                                    <ul class="d-flex align-items-center">
-                                        <li>By <a href="index.html">procus</a></li>
-                                        <li class="separator">|</li>
-                                        <li>23 March 2023</li>
-                                    </ul>
-                                    <ul>
-                                        <li><i class="fa-solid fa-book-open"></i> 4 min read</li>
-                                    </ul>
-                                </div>
-                                <h4>
-                                    <a href="blog-single.html">Transforming Digital Solutions with  Artificial Intelligence</a>
-                                </h4>
-                                <p class="mt-20">We delve into the profound impact that Artificial Intelligence (AI) is having on digital solutions across various industries.</p>
-                                <div class="blog-tags">
-                                    <ul>
-                                        <li><a href="blog-single.html">Artificial Intelligence</a></li>
-                                        <li><a href="blog-single.html">Machine Learning</a></li>
-                                        <li><a href="blog-single.html">Deep Learning</a></li>
-                                    </ul>
-                                </div>
-                                <a class="blog-btn mt-40" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
                             </div>
-                        </div>
-                        <div class="col-lg-6 wow fadeInRight" data-wow-delay=".2s">
-                            <div class="blog-single-slide">
-                                <div class="blog-image">
-                                    <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-thum-02.png' %}" alt="blog-thumb"></a>
-                                </div>
-                                <div class="blog-meta">
-                                    <ul class="d-flex align-items-center">
-                                        <li>By <a href="index.html">procus</a></li>
-                                        <li class="separator">|</li>
-                                        <li>23 March 2023</li>
-                                    </ul>
-                                    <ul>
-                                        <li><i class="fa-solid fa-book-open"></i> 4 min read</li>
-                                    </ul>
-                                </div>
-                                <h4>
-                                    <a href="blog-single-html">The Art of Collaboration in Creative Agency Studio</a>
-                                </h4>
-                                <p class="mt-20">In this blog post, we explore the dynamics of collaboration within and between creative agencies.</p>
-                                <div class="blog-tags">
-                                    <ul>
-                                        <li><a href="blog-single-html">creative agency</a></li>
-                                        <li><a href="blog-single-html">product</a></li>
-                                        <li><a href="blog-single-html">digital</a></li>
-                                    </ul>
-                                </div>
-                                <a class="blog-btn mt-40" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
-                            <div class="blog-single-slide">
-                                <div class="blog-image">
-                                    <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-thum-03.png' %}" alt="blog-thumb"></a>
-                                </div>
-                                <div class="blog-meta">
-                                    <ul class="d-flex align-items-center">
-                                        <li>By <a href="index.html">procus</a></li>
-                                        <li class="separator">|</li>
-                                        <li>23 March 2023</li>
-                                    </ul>
-                                    <ul>
-                                        <li><i class="fa-solid fa-book-open"></i> 4 min read</li>
-                                    </ul>
-                                </div>
-                                <h4>
-                                    <a href="blog-single-html">Enhancing Creativity with Machine Learning</a>
-                                </h4>
-                                <p class="mt-20">Explore how AI is revolutionizing the design process, from generating innovative concepts to automating.</p>
-                                <div class="blog-tags">
-                                    <ul>
-                                        <li><a href="blog-single-html">Artificial Intelligence </a></li>
-                                        <li><a href="blog-single-html">Machine Learning</a></li>
-                                        <li><a href="blog-single-html">Deep Learning</a></li>
-                                    </ul>
-                                </div>
-                                <a class="blog-btn mt-40" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 wow fadeInRight" data-wow-delay=".2s">
-                            <div class="blog-single-slide">
-                                <div class="blog-image">
-                                    <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-thum-4.png' %}" alt="blog-thumb"></a>
-                                </div>
-                                <div class="blog-meta">
-                                    <ul class="d-flex align-items-center">
-                                        <li>By <a href="index.html">procus</a></li>
-                                        <li class="separator">|</li>
-                                        <li>23 March 2023</li>
-                                    </ul>
-                                    <ul>
-                                        <li><i class="fa-solid fa-book-open"></i> 4 min read</li>
-                                    </ul>
-                                </div>
-                                <h4>
-                                    <a href="blog-single-html">The Art of Collaboration in Creative Agency Studio</a>
-                                </h4>
-                                <p class="mt-20">In this blog post, we explore the dynamics of collaboration within and between creative agencies.</p>
-                                <div class="blog-tags">
-                                    <ul>
-                                        <li><a href="blog-single-html">creative agency</a></li>
-                                        <li><a href="blog-single-html">product</a></li>
-                                        <li><a href="blog-single-html">digital</a></li>
-                                    </ul>
-                                </div>
-                                <a class="blog-btn mt-40" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
-                            <div class="blog-single-slide">
-                                <div class="blog-image">
-                                    <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-thum-5.png' %}" alt="blog-thumb"></a>
-                                </div>
-                                <div class="blog-meta">
-                                    <ul class="d-flex align-items-center">
-                                        <li>By <a href="index.html">procus</a></li>
-                                        <li class="separator">|</li>
-                                        <li>23 March 2023</li>
-                                    </ul>
-                                    <ul>
-                                        <li><i class="fa-solid fa-book-open"></i> 4 min read</li>
-                                    </ul>
-                                </div>
-                                <h4>
-                                    <a href="blog-single-html">A Blueprint for Innovation in Product Development</a>
-                                </h4>
-                                <p class="mt-20">Explore how AI is revolutionizing the design process, from generating innovative concepts to automating.</p>
-                                <div class="blog-tags">
-                                    <ul>
-                                        <li><a href="blog-single-html">Artificial Intelligence </a></li>
-                                        <li><a href="blog-single-html">Machine Learning</a></li>
-                                        <li><a href="blog-single-html">Deep Learning</a></li>
-                                    </ul>
-                                </div>
-                                <a class="blog-btn mt-40" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 wow fadeInRight" data-wow-delay=".2s">
-                            <div class="blog-single-slide">
-                                <div class="blog-image">
-                                    <a href="blog-single.html" class="blog-thumb"><img src="{% static 'assets/images/blog-thum-6.png' %}" alt="blog-thumb"></a>
-                                </div>
-                                <div class="blog-meta">
-                                    <ul class="d-flex align-items-center">
-                                        <li>By <a href="index.html">procus</a></li>
-                                        <li class="separator">|</li>
-                                        <li>23 March 2023</li>
-                                    </ul>
-                                    <ul>
-                                        <li><i class="fa-solid fa-book-open"></i> 4 min read</li>
-                                    </ul>
-                                </div>
-                                <h4>
-                                    <a href="blog-single-html">Product Management in the Digital Age: Complexity and Uncertainty</a>
-                                </h4>
-                                <p class="mt-20">In this blog post, we explore the dynamics of collaboration within and between creative agencies.</p>
-                                <div class="blog-tags">
-                                    <ul>
-                                        <li><a href="blog-single-html">creative agency</a></li>
-                                        <li><a href="blog-single-html">product</a></li>
-                                        <li><a href="blog-single-html">digital</a></li>
-                                    </ul>
-                                </div>
-                                <a class="blog-btn mt-40" href="blog-single.html">Read More <span><i class="fas fa-arrow-right"></i></span></a>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
-                    <div class="row">
+                    {% comment %} <div class="row">
                         <div class="col-12 wow fadeInUp" data-wow-delay=".2s">
                             <ul class="blog-pagination text-center">
                                 <li class="prev-post"><span><i class="fas fa-arrow-left"></i></span> previous</li>
@@ -347,7 +207,7 @@
                                 <li class="next-post">next <span><i class="fas fa-arrow-right"></i></span></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
             </div>
         </div>
@@ -373,10 +233,10 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-widget-box about-us">
                             <a href="index.html" class="footer-logo">
-                                <img src="{% static 'assets/images/logo.png' %}" alt="logo">
+                                IMA
                             </a>
                             <a href="index.html" class="footer-logo logo-black">
-                                <img src="{% static 'assets/images/logo-black.png' %}" alt="logo">
+                                IMA
                             </a>
                             <p>We're a dynamic creative agency dedicated to crafting compelling narratives and innovative solutions that resonate with precision.</p>
                             <ul class="footer-social">
@@ -417,7 +277,7 @@
                             <h4 class="footer-widget-title">Contact Us</h4>
                             <ul class="footer-contact">
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-phone"></i></span> (123) 456789000</a></li>
-                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@procus.com</span></a></li>
+                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@IMA.com</span></a></li>
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span> 1498w Fluton ste, STE 2D Chicgo, IL 63867.</a></li>
                             </ul>
                         </div>
@@ -433,7 +293,7 @@
                     <div class="row">
                         <div class="col-lg-6 align-self-center">
                             <p class="copyright-text">
-                                Copyright &copy; <span id="date"></span> <a href="index.html"> Procus</a> Designed by Pointer Flow.
+                                Copyright &copy; <span id="date"></span> <a href="index.html"> IMA</a> Designed by Pointer Flow.
                             </p>
                         </div>
                         <div class="col-lg-6 align-self-center">

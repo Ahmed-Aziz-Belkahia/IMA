@@ -9,8 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- page title -->
-    <title>Procus - Creative Agency HTML Template</title>
+    <title>IMA - Creative Agency HTML Template</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    
     <!-- favicon -->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
 
@@ -51,8 +55,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-area">
-                            <a class="dark-version" href="index.html"> <img src="{% static 'assets/images/logo.png' %}" alt="logo"></a>
-                            <a class="light-version" href="index.html"> <img src="{% static 'assets/images/logo-black.png' %}" alt="logo"></a>
+                            <a class="IMAlogo" href="index.html">IMA</a>
                         </div>
                     </div>
                     <div class="col-lg-8 d-none d-lg-block">
@@ -156,8 +159,8 @@
                             <div class="single-info active">
                                 <span class="info-icon"><i class="fa-regular fa-envelope"></i></span>
                                 <h4>email</h4>
-                                <span>info@procus.com</span>
-                                <span>info@procus.com</span>
+                                <span>info@IMA.com</span>
+                                <span>info@IMA.com</span>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay=".5s">
@@ -239,21 +242,61 @@
                                 <textarea id="project-details" name="project-details" placeholder="Tell something about your project" rows="4" required></textarea>
                             </div>
                             <div class="form-group">
-                                <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
-                                <label class="privacy-policy" for="privacy-policy">I agree with the <a href="privacy.html">privacy policy</a></label>
-                            </div>
-                            <div class="form-group">
                                 <input type="file" id="attachment" name="attachment" style="display: none;">
                                 <label for="attachment" class="attachment-btn"><i class="fas fa-paperclip"></i> Add attachment</label>
                             </div>
                             <button type="submit" class="primary-btn">get started <span><i class="ri-arrow-right-up-line"></i></span></button>
                         </form>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('.contact-form-3 form');
+    
+            form.addEventListener('submit', function(event) {
+                // Check if all required fields are filled
+                const projectDetails = document.getElementById('project-details').value;
+            
+                if (!projectDetails) {
+                    alert('Please fill out all required fields.');
+                    return; // Prevent form submission
+                }
+    
+                event.preventDefault(); // Prevent the default form submission
+    
+                const formData = new FormData(form);
+                
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest' // To identify the request as AJAX
+                    },
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Your message has been sent successfully!');
+                        form.reset(); // Reset the form
+                    } else {
+                        let errors = '';
+                        for (const [field, messages] of Object.entries(data.errors)) {
+                            errors += `${field}: ${messages.join(', ')}\n`;
+                        }
+                        alert('There was an error with your submission:\n' + errors);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again later.');
+                });
+            });
+        });
+    </script>
     <!-- footer area starts -->
     <footer class="footer-area">
         <!-- footer widget -->
@@ -263,10 +306,10 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="footer-widget-box about-us">
                             <a href="index.html" class="footer-logo">
-                                <img src="{% static 'assets/images/logo.png' %}" alt="logo">
+                                IMA
                             </a>
                             <a href="index.html" class="footer-logo logo-black">
-                                <img src="{% static 'assets/images/logo-black.png' %}" alt="logo">
+                                IMA
                             </a>
                             <p>We're a dynamic creative agency dedicated to crafting compelling narratives and innovative solutions that resonate with precision.</p>
                             <ul class="footer-social">
@@ -307,7 +350,7 @@
                             <h4 class="footer-widget-title">Contact Us</h4>
                             <ul class="footer-contact">
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-phone"></i></span> (123) 456789000</a></li>
-                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@procus.com</span></a></li>
+                                <li><a href="#"><span class="contact-icon"><i class="fa-regular fa-envelope"></i></span><span> info@IMA.com</span></a></li>
                                 <li><a href="#"><span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span> 1498w Fluton ste, STE 2D Chicgo, IL 63867.</a></li>
                             </ul>
                         </div>
@@ -323,7 +366,7 @@
                     <div class="row">
                         <div class="col-lg-6 align-self-center">
                             <p class="copyright-text">
-                                Copyright &copy; <span id="date"></span> <a href="index.html"> Procus</a> Designed by Pointer Flow.
+                                Copyright &copy; <span id="date"></span> <a href="index.html"> IMA</a> Designed by Pointer Flow.
                             </p>
                         </div>
                         <div class="col-lg-6 align-self-center">
